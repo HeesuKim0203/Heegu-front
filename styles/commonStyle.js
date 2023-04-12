@@ -39,7 +39,7 @@ const ItemContainer = styled.div`
 
 const UrlImage = styled.div`
     ${ props => {
-        return props.url ? `background-image : url(${ "http://localhost:3010" }/image${ props.url }) ;` : `background-color : #eeeeee ;` ;
+        return props.url ? `background-image : url(${ "http://www.heegublog.com" }/image${ props.url }) ;` : `background-color : #eeeeee ;` ;
     } }
 
     background-size : cover ;
