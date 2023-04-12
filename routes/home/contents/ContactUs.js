@@ -10,7 +10,7 @@ import {
     InputText,
     Button,
 
-} from 'styles/homeStyle/contactUsstyle'
+} from 'styles/homeStyle/contactUsStyle'
 
 function ContactUsContents({
     contactUsTitle,

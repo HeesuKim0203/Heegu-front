@@ -15,9 +15,11 @@ import {
     blogSideMenuTitle, 
     ballon,
 
-    numberOfBlogs
+    numberOfBlogs,
+    relatedWriting
 
 } from 'util/text'
+import { useState } from 'react'
 
 function BlogWriting({
     data : {
@@ -25,6 +27,8 @@ function BlogWriting({
     },
     language
 }) {
+
+    const [ blogWritingContentsLoad, setBlogWritingContentsLoad ] = useState(false) ;
 
     return (
         <>
@@ -48,7 +52,11 @@ function BlogWriting({
                             />
                             <BlogWritingContents 
                                 language = { language }
+                                relatedWriting = { relatedWriting[language] }
                                 blogs = { setDataLanguage(blogs, language)[0] }
+                                relatedBlogs = { setDataLanguage(blogs, language).slice(1, 3) }
+                                blogWritingContentsLoad = { blogWritingContentsLoad }
+                                setBlogWritingContentsLoad = { setBlogWritingContentsLoad }
                             />
                         </BlogWrap>
                     </Wrap>

@@ -39,15 +39,6 @@ export default class MyDocument extends Document {
       <Html lang="en">
         {/* Meta Data */}
         <Head>
-          {/* <style>
-            {
-             ` 
-              @import url(https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=block) ;
-              @import url(https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@500;700&display=block) ;
-              @import url(https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@500;700&display=block) ;
-              `
-            }
-          </style> */}
         </Head>
         <body>
           <div id = "wrap">

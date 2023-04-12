@@ -1,8 +1,14 @@
 import { setObjectArrayKeyToLanguageData } from 'util/data'
 
+// Site text
+
+const siteTitle = "HeeGu" ;
+
+//
+
 // Meun text
 
-const menuTitle = "HeeGu" ;
+const menuTitle = siteTitle ;
 
 const blogText = "Blog" ;
 
@@ -168,6 +174,15 @@ const ballonText = [
 
 //
 
+// BlogContent text
+
+const relatedWritingText = [
+    "관련글",
+    "関連文"
+] ;
+
+//
+
 export const {
     aboutIntroductoryText : aboutIntroductory,
     contactUsInputPlaceHolderText : contactUsInputPlaceHolder,
@@ -175,16 +190,19 @@ export const {
     blogBigMenuText : blogBigMenu,
     numberOfBlogsText : numberOfBlogs,
     ballonText : ballon,
+    relatedWritingText : relatedWriting,
 } = setObjectArrayKeyToLanguageData(
     { aboutIntroductoryText },
     { contactUsInputPlaceHolderText },
     { contactUsTextAreaPlaceHolderText },
     { blogBigMenuText },
     { numberOfBlogsText },
-    { ballonText }
+    { ballonText },
+    { relatedWritingText }
 ) ;
 
 export {
+    siteTitle,
     menuTitle, 
     menu,
     blogText,

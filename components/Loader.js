@@ -1,18 +1,17 @@
 import Image from 'next/image'
 import load from 'public/load.svg'
 
-import {
+import { Wrap } from 'styles/loaderStyle'
 
-    Wrap
-
-} from 'styles/loaderStyle'
-
-function Loader(props) {
+function Loader({ small }) {
     return (
-        <Wrap>
+        <Wrap
+            small = { small }
+        >
             <Image 
                 src = { load }
                 alt = "Load image"
+                priority = { true }
             />
         </Wrap>
     );

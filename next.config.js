@@ -6,6 +6,7 @@ const nextConfig = {
   compiler: {
     styledComponents : { ssr: true, displayName : true, cssProp : true },
   },
+  staticPageGenerationTimeout : 600,
   reactStrictMode: true,
   async redirects() {
     return [

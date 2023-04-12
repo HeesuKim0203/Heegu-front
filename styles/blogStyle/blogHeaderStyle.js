@@ -8,6 +8,8 @@ const BlogContentsHeader = styled.div`
 
 const BlogContentsMember = styled.p`
     display : inline ;
+
+    font-size : 14px ;
 `;
 
 const BlogContentsMemberEffect = styled.p`
@@ -15,6 +17,7 @@ const BlogContentsMemberEffect = styled.p`
 
     font-family : 'Poppins', sans-serif ;
     font-weight : bold ;
+    font-size : 14px ;
 
     color : #0AA79B ;
 `;

@@ -49,6 +49,8 @@ const BlogWritingContentsFooterTitle = styled.h3`
     font-weight : bold ;
     
     line-height : 175% ;
+
+    font-family : inherit ;
 `;
 
 const BlogWritingContentsFooterItemsContainer = styled.div`

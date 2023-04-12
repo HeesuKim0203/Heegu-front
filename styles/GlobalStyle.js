@@ -1,5 +1,6 @@
 import styled, { createGlobalStyle } from 'styled-components'
 import { reset } from 'styled-reset'
+import theme from 'styles/theme'
 
 const PageContainer = styled.div`
     font-family : ${props => props.theme[props.language] } ;
@@ -43,52 +44,52 @@ const GlobalStyle = createGlobalStyle`
     }
 
     .editor h1{
-        font-size: 2em;
+        font-size : 2em ;
     }
 
     .editor h2{
-        font-size: 1.5em;
+        font-size: 1.5em ;
     }
 
     .editor h3{
-        font-size: 1.17em;
+        font-size : 1.17em ;
     }
 
     .editor h4{
-        font-size: 1em;
+        font-size : 1em ;
     }
     
     .editor h5{
-        font-size: .83em;
+        font-size : .83em ;
     }
 
     .editor h6{
-        font-size: .67em;
+        font-size : .67em ;
     }
 
     .editor h1, h2, h3, h4, h5, h6{
-        font-weight: bolder;
+        font-weight : bolder ;
     }
 
     .editor blockquote {
-        color: #fff;
-        margin: 10px;
-        padding-left: 1.2em;
-        border-left: 0.2em #666 solid;
-        font-style: italic;
-    }
-    .editor a{
-        color: rgb(46, 46, 233);
+        color : #fff ;
+        margin : 10px ;
+        padding-left : 1.2em ;
+        border-left : 0.2em #666 solid ; 
+        font-style : italic ;
     }
 
     .editor li{
-        list-style-type: square;
+        list-style-type : square ;
     }
 
     .fullheight{
-        height: 92vh;
+        height : 92vh ;
     }
 
+    .wmde-markdown h1, h2, h3, h4, h5, h6, code {
+        font-family : 'Poppins', sans-serif ;
+    }
 ` ;
 
 export { 

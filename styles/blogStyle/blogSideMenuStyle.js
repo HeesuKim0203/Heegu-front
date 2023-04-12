@@ -16,7 +16,7 @@ const BlogSideMenuContainer= styled.div`
 `;
 
 const BlogSideBigMenu = styled.div`
-
+    
 `;
 
 const BlogSideBigMenuTitleArea = styled.div`
@@ -68,7 +68,7 @@ const BlogSideBigMenuTitle = styled.h3`
     position : relative ;
 
     user-select : none ;
-
+    font-family : inherit ;
 `;
 
 const BlogSideBigMenuButton = styled(Image).attrs(props => ({

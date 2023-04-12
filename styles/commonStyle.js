@@ -1,7 +1,5 @@
 import styled from 'styled-components'
 
-import { BASE_URL } from 'util/api'
-
 // Wrap Style
 
 const Wrap = styled.div`
@@ -41,7 +39,7 @@ const ItemContainer = styled.div`
 
 const UrlImage = styled.div`
     ${ props => {
-        return props.url ? `background-image : url(${ BASE_URL }/image${ props.url }) ;` : `background-color : #eeeeee ;` ;
+        return props.url ? `background-image : url(${ "http://localhost:3010" }/image${ props.url }) ;` : `background-color : #eeeeee ;` ;
     } }
 
     background-size : cover ;

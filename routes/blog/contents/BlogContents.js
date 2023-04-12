@@ -15,7 +15,6 @@ function BlogContents({
     language, 
     blogs 
 }) {
-
     return (
         <BlogContentsMain>
             {
