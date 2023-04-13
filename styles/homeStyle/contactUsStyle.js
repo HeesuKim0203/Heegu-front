@@ -95,6 +95,36 @@ const Button = styled.button`
     color : #FFFFFF ;
 
     cursor : pointer ;
+
+    &:hover {
+        .ballon {
+            display : block ;
+            position : absolute ;
+            width : 82px ; 
+            height : 28px ;
+            left : 0px ;
+            top : -40px ;
+            background : #0AA79B ;
+            color : #FAFAFA ;
+            border-radius : 5px ;
+
+            font-size : 13px ;
+            text-align : center ;
+            line-height : 26px ;
+
+            &::after {
+                border-top : 5px solid #0AA79B ;
+                border-left : 5px solid transparent ;
+                border-right : 5px solid transparent ;
+                border-bottom : 0px solid transparent ;
+
+                content : "";
+                position : absolute ;
+                top : 28px ;
+                left : 15px ;
+            }
+        }
+    }
 `;
 
 //

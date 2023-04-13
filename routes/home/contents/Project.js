@@ -30,7 +30,7 @@ function ProjectContents({
     projectTitle
 }) {
 
-    const [ mainItem, setMainItem ] = useState( null ) ;
+    const [ mainItem, setMainItem ] = useState( projects[0] ) ;
     const [ select, setSelect ] = useState(0) ;
 
     function subItemOnClick(event, index) {
@@ -42,7 +42,7 @@ function ProjectContents({
 
     useEffect(() => {
         
-        setMainItem(projects && projects[0]) ;
+        setMainItem(projects && projects[select]) ;
 
     }, [ projects ]) 
 
