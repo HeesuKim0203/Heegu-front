@@ -21,9 +21,9 @@ function BlogSideMenu({
     blogBigMenu,
     blogSideMenuTitle,
     ballon,
+    blogsType,
     language
 }) {
-
     const router = useRouter() ;
     const [ menuStatus, setMenuStatus ] = useState(null) ;
 
@@ -76,12 +76,13 @@ function BlogSideMenu({
                                     }
                                 </BlogSideBigMenuTitleArea>
                                 <BlogSideSmallMenuArea>
-                                    { (menuStatus[index] && smallMenuStatus) ?
+                                    { (index !== 0) ?
                                         value.smallMenu.map((value, index) => {
                                             return (
                                                 <BlogSideSmallMenuLink
                                                     key = { index }
-                                                    href = { `/${language}/blog?type=${ value }` }
+                                                    href = { `/blog?type=${ value }` }
+                                                    locale = { language }
                                                 >
                                                     <BlogSideSmallMenu
                                                         select = { Number(router.query.type) === (index + 1) ? 1 : 0 }
@@ -91,7 +92,21 @@ function BlogSideMenu({
                                                 </BlogSideSmallMenuLink>
                                             ) ;
                                         }) : (
-                                            <></>
+                                            blogsType.map((value, index) => {
+                                                return (
+                                                    <BlogSideSmallMenuLink
+                                                        key = { index }
+                                                        href = { `/blog?type=${ value }` }
+                                                        locale = { language }
+                                                    >
+                                                        <BlogSideSmallMenu
+                                                            select = { Number(router.query.type) === (index + 1) ? 1 : 0 }
+                                                        >
+                                                            { value }
+                                                        </BlogSideSmallMenu>
+                                                    </BlogSideSmallMenuLink>
+                                                ) ;
+                                            })
                                         )
                                     }
                                 </BlogSideSmallMenuArea>

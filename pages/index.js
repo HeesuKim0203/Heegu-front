@@ -1,14 +1,14 @@
 import Loader from 'components/Loader'
 import HomeContainer from 'routes/home/HomeContainer'
 import { getProjects, getCareers, getBlogs } from 'util/api'
-import { KR } from 'util/data'
-import { fontLoad } from 'util/commHook'
+import { fontLoad, getPath } from 'util/commHook'
 
 // data : Home data
 // notFound : Data existence
 function Index({ data, notFound }) {
 
-  const { load } = fontLoad('Noto Sans KR') ;
+  const { load } = fontLoad('Noto Sans KR', 'Noto Sans JP') ;
+  const { _, lang } = getPath() ;
 
   return (
     <>
@@ -17,7 +17,7 @@ function Index({ data, notFound }) {
           (!notFound && 
             <HomeContainer 
               data = { data }
-              language = { KR }
+              language = { lang }
             />
           ) : (
             <Loader />

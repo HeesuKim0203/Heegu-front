@@ -41,7 +41,7 @@ const BlogSideBigMenuTitleArea = styled.div`
 
             font-size : 13px ;
             text-align : center ;
-            line-height : 26px ;
+            line-height : 28px ;
 
             &::after {
                 border-top : 5px solid #0AA79B ;

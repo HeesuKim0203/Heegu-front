@@ -143,6 +143,10 @@ const SlideNext = styled(Image).attrs(props => ({
     cursor : pointer ;
 `;
 
+const ItemLink = styled(Link)`
+    display : block ;
+`;
+
 //
 
 export {
@@ -160,5 +164,7 @@ export {
     MoreButton,
     SlidePrev,
     SlideNext,
+
+    ItemLink
 
 }

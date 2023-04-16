@@ -1,59 +1,46 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useState, useRef } from 'react'
 import { useRouter } from 'next/router'
 import FontFaceObserver from 'fontfaceobserver'
-
-import { languageData } from 'util/data'
 import { menu } from 'util/text'
 
-export function getLanguageExcludePath() {
+export function getPath() {
 
     const router = useRouter() ;
-
-    const [ urlLanguage, setUrlLanguage ] = useState('') ; // Current Language exclude path status
+    const [ urlPath, setUrlPath ] = useState('') ;
+    const [ lang, setLang ] = useState('') ;
+    const [ query, setQuery ] = useState('') ;
 
     useEffect(() => {
 
-        const { asPath } = router ;
-        const languageExcludePath = asPath.slice( 6, asPath.length ) ; // 6 -> KR, JP length
+        const { locale } = router ;
 
-        if( languageExcludePath.substring(0, 1) != '#' ) {
+        setLang(locale) ;
 
-            setUrlLanguage(languageExcludePath) ;
-        
-        }else {
+    }, []) ;
 
-            const element =  menu.find( value => value.name === languageExcludePath.substring(1) ) ;
+    useEffect(() => {
 
+        const { asPath, locale, query } = router ;
+
+        const element =  menu.find( value => value.name === asPath.substring(2) ) ;
+
+        if( lang === locale ) {
             element && window.scroll({
                 behavior : 'smooth',
                 left : 0,
                 top : element.y
             }) ;
-
+        }else {
+            setLang(locale) ;
         }
 
-    }, [ router ]) ;
-
-    return { urlLanguage } ;
-
-}
-
-export function getLanguageSetStatus() {
-
-    const router = useRouter() ;
-
-    const [ language, setLanguage ] = useState(undefined) ;  // Current language status languageData[0] -> KR
-
-    useEffect(() => {
-
-        const { asPath } = router ;
-        const urlLanguageStatus = asPath.slice(1, 6) ; // 1 -> / exclude, 6 -> KR, JP String length
-
-        setLanguage(languageData.find(value => value.language === urlLanguageStatus).language) ;
+        setUrlPath(asPath) ;
+        setQuery(query) ;
 
     }, [ router ]) ;
 
-    return { language, setLanguage } ;
+    return { urlPath, lang, query } ;
+
 }
 
 export function getModalDisplay() {
@@ -104,19 +91,20 @@ export function apiHook(api, query) {
     return { data, error, load, getData, setLoad } ;
 }
 
-export function fontLoad(fontString) {
+export function fontLoad(...fontString) {
 
     const [ load, setLoad ] = useState(false) ;
 
     useEffect(() => {
 
         const enFont = new FontFaceObserver('Poppins') ;
-        const font = new FontFaceObserver(fontString) ;
 
-        Promise.all([font.load(), enFont.load()]).then(function () {
-            setTimeout(() => {
-                setLoad(true) ;
-            }, 1000)
+        const font = fontString.map((value) => {
+            return new FontFaceObserver(value)
+        }) ;
+
+        Promise.all([...font.map(value => value.load()), enFont.load()]).then(function () {
+            setLoad(true)
         });
 
     }, []) ;
@@ -124,3 +112,41 @@ export function fontLoad(fontString) {
 
     return { load } ;
 } 
+
+export function LazyImageObserver( { src, dataSrc } ) {
+
+    const [ imageSrc, setImageSrc ] = useState(src) ;
+    const imageRef = useRef(null) ;
+    
+    useEffect(() => {
+
+        let observer ;
+        let timeOutClear ;
+  
+        if( imageRef ) {
+
+            observer = new IntersectionObserver(
+                ([entry]) => {
+
+                    if(entry.isIntersecting) {
+                        timeOutClear = setTimeout(() => {
+                            setImageSrc(dataSrc) ;
+                        }, 150) ;
+                        observer.unobserve( imageRef.current ) ;
+                    } 
+
+                }, { threshold : [ 0.25 ] }
+
+            ) ;
+            clearTimeout(timeOutClear) ;
+            observer.observe( imageRef.current ) ;
+        }
+  
+        return () => {
+            observer && observer.disconnect(imageRef) ;
+        } ;
+  
+    }, [ imageRef, imageSrc, dataSrc ]) ;
+  
+    return { imageSrc, imageRef } ;
+}

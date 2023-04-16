@@ -2,7 +2,7 @@ import Link from 'next/link'
 
 import { menuTitle, menu } from 'util/text'
 import { languageData } from 'util/data'
-import { getLanguageExcludePath } from 'util/commHook'
+import { getPath } from 'util/commHook'
 import { useState } from 'react'
 
 import { 
@@ -27,7 +27,7 @@ import {
 
 function Header({ language }) {
 
-    const { urlLanguage } = getLanguageExcludePath() ;
+    const { urlPath } = getPath() ;
     const [ languageMenuDisplay, setLanguageMenuDisplay ] = useState(undefined) ; 
 
     function languageImageOnClick(event) {
@@ -44,7 +44,6 @@ function Header({ language }) {
                     <Menu>
                         { menu.map((value, index) => {
                             const { name } = value ;
-                            const url = `/${ language }` ;
                             return (
                                 <MenuItem
                                     key = { index }
@@ -52,9 +51,10 @@ function Header({ language }) {
                                     <Link 
                                         href = { 
                                             index !== menu.length - 1 ? 
-                                            `${ url }#${ name }` : 
-                                            `${ url }/${ name.substring(0, 1).toLowerCase() + name.substring(1) }`
+                                            `/#${ name }` : 
+                                            `/${ name.substring(0, 1).toLowerCase() + name.substring(1) }`
                                         }
+                                        locale = { language }
                                     >
                                         { name }
                                     </Link>
@@ -79,7 +79,8 @@ function Header({ language }) {
                                     key = { index }
                                 >
                                     <Link
-                                        href = { `/${language}` + urlLanguage }
+                                        href = { urlPath }
+                                        locale = { language }
                                     >
                                     { text }
                                     </Link>

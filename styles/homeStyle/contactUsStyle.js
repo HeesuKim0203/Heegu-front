@@ -78,6 +78,8 @@ const InputText = styled.textarea`
 `;
 
 const Button = styled.button`
+    position : relative ;
+
     width : 100% ;
     height : 65px ;
 
@@ -102,7 +104,7 @@ const Button = styled.button`
             position : absolute ;
             width : 82px ; 
             height : 28px ;
-            left : 0px ;
+            left : 580px ;
             top : -40px ;
             background : #0AA79B ;
             color : #FAFAFA ;
@@ -110,7 +112,7 @@ const Button = styled.button`
 
             font-size : 13px ;
             text-align : center ;
-            line-height : 26px ;
+            line-height : 28px ;
 
             &::after {
                 border-top : 5px solid #0AA79B ;
@@ -127,6 +129,12 @@ const Button = styled.button`
     }
 `;
 
+const Ballon = styled.div.attrs(props => ({
+    className : "ballon"
+}))`
+    display : none ;
+`;
+
 //
 
 export {
@@ -139,5 +147,7 @@ export {
     InputTitle,
     InputText,
     Button,
+
+    Ballon
 
 }

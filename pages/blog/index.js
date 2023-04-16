@@ -1,12 +1,12 @@
 import Loader from 'components/Loader'
 import BlogContainer from 'routes/blog/BlogContainer'
 import { getBlogs } from 'util/api'
-import { JP } from 'util/data'
-import { fontLoad } from 'util/commHook'
+import { fontLoad, getPath } from 'util/commHook'
 
 export function Index({ data, notFound }) {
 
-  const { load } = fontLoad('Noto Sans JP') ;
+  const { load } = fontLoad('Noto Sans KR', 'Noto Sans JP') ;
+  const { _, lang } = getPath() ;
 
   return (
     <>
@@ -15,7 +15,7 @@ export function Index({ data, notFound }) {
           (!notFound && 
             <BlogContainer 
               data = { data }
-              language = { JP }
+              language = { lang }
             />
           ) : (
             <Loader />

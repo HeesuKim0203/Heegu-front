@@ -16,6 +16,8 @@ import {
     SlidePrev,
     SlideNext,
 
+    ItemLink
+
 } from 'styles/homeStyle/writingStyle'
 
 import { Swiper, SwiperSlide } from 'swiper/react'
@@ -46,16 +48,22 @@ function WritingContents({
                     >
                         { writing.map((value, index) => (
                                 <SwiperSlide key = { index } >
-                                    <Item key = { index } >
-                                        <ItemImage  
-                                            url = { value.image }
-                                        />
-                                        <ItemTextArea>
-                                            <ItemTitle>{ value.title }</ItemTitle>
-                                            <ItemDescription>{ value.introduction }</ItemDescription>
-                                            <ItemDate>{ value.date }</ItemDate>
-                                        </ItemTextArea>
-                                    </Item>
+                                    <ItemLink
+                                        key = { index }
+                                        href = { `/blog/${value._id}` }
+                                        locale = { language }
+                                    >
+                                        <Item key = { index } >
+                                            <ItemImage  
+                                                url = { value.image }
+                                            />
+                                            <ItemTextArea>
+                                                <ItemTitle>{ value.title }</ItemTitle>
+                                                <ItemDescription>{ value.introduction }</ItemDescription>
+                                                <ItemDate>{ value.date }</ItemDate>
+                                            </ItemTextArea>
+                                        </Item>
+                                    </ItemLink>
                                 </SwiperSlide>
                             ))
                         }
@@ -63,7 +71,8 @@ function WritingContents({
                     <SlideNext />
                     <MoreButtonArea>
                         <MoreButton
-                            href = { `/${ language }/${ blogText.substring(0, 1).toLowerCase() + blogText.substring(1) }` }
+                            href = { `/${ blogText.substring(0, 1).toLowerCase() + blogText.substring(1) }` }
+                            locale = { language }
                         >
                             More
                         </MoreButton>

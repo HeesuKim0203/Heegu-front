@@ -36,7 +36,7 @@ export default class MyDocument extends Document {
   // Document template
   render() {
     return (
-      <Html lang="en">
+      <Html>
         {/* Meta Data */}
         <Head>
         </Head>

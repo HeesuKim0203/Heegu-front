@@ -106,11 +106,6 @@ const blogBigMenuText = [
         {
             name : "개발",
             smallMenu : [
-                "Javascript",
-                "Cs",
-                "C++",
-                "Server",
-                "C"
             ],
             status : 1
         },
@@ -133,11 +128,6 @@ const blogBigMenuText = [
         {
             name : "開発",
             smallMenu : [
-                "Javascript",
-                "Cs",
-                "C++",
-                "Server",
-                "C"
             ],
             status : 1
         },

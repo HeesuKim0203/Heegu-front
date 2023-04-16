@@ -10,12 +10,15 @@ import {
     InputText,
     Button,
 
+    Ballon
+
 } from 'styles/homeStyle/contactUsStyle'
 
 function ContactUsContents({
     contactUsTitle,
     contactUsInputPlaceHolder,
     contactUsTextAreaPlaceHolder,
+    ballon,
     language
 }) {
     return (
@@ -33,7 +36,10 @@ function ContactUsContents({
                                 placeholder = { contactUsTextAreaPlaceHolder } 
                                 language = { language }    
                             />
-                            <Button type = "button" >Submit</Button>
+                            <Button type = "button" >
+                                <Ballon>{ ballon }</Ballon>
+                                Submit
+                            </Button>
                         </Fieldset>
                     </Form>
                 </FormArea>

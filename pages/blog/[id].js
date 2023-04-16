@@ -1,12 +1,12 @@
 import Loader from 'components/Loader'
 import BlogWriting from 'routes/writing/BlogWriting'
 import { getBlogsId, getBlogs } from 'util/api'
-import { KR } from 'util/data'
-import { fontLoad } from 'util/commHook'
+import { fontLoad, getPath } from 'util/commHook'
 
 export function Index({ data, notFound }) {
 
-  const { load } = fontLoad('Noto Sans KR') ;
+  const { load } = fontLoad('Noto Sans KR', 'Noto Sans JP') ;
+  const { _, lang } = getPath() ;
 
   return (
     <>
@@ -15,7 +15,7 @@ export function Index({ data, notFound }) {
           (!notFound && 
             <BlogWriting 
               data = { data }
-              language = { KR }
+              language = { lang }
             />
           ) : (
             <Loader />
@@ -26,20 +26,30 @@ export function Index({ data, notFound }) {
 }
 
 
-export const getStaticPaths = async () => {
+export const getStaticPaths = async ({ locales }) => {
 
     const {
         data : blogs
     } = await getBlogs() ;
 
-    const paths = blogs.map((value) => ({
-      params: { id: value._id },
-    })) ;
+    const pathsArray = blogs.map(value => (
+      locales.map(locale => {
+        return ({
+          params: { id: value._id },
+          locale
+        })
+      })
+    )) ;
+
+    const paths = pathsArray.reduce((prev, value) => ([
+        ...prev,
+        ...value
+    ]), []) ;
 
     return { paths, fallback: false }
   }
   
-// 빌드될 때 실행 
+
 export const getStaticProps = async ({ params }) => {
     const {
         data : blogs

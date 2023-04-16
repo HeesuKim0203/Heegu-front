@@ -91,6 +91,7 @@ const LanguageMenu = styled.ul`
     position : absolute ;
 
     top : 3px ;
+    right : 30px ;
 
     font-size : 15px ;
     font-weight : lighter ;
@@ -102,12 +103,10 @@ const LanguageMenu = styled.ul`
     /* Animation style */
     @keyframes fadeIn {
         from {
-            right : 15px ;
             opacity : 0 ;
             pointer-events : none ;
         }
         to {
-            right : 30px ;
             opacity : 1 ;
             pointer-events : auto ;
         }
@@ -115,12 +114,10 @@ const LanguageMenu = styled.ul`
 
     @keyframes fadeOut {
         from {
-            right : 30px ;
             opacity : 1 ;
             pointer-events : auto ;
         }
         to {
-            right : 15px ;
             opacity : 0 ;
             pointer-events : none ;
         }

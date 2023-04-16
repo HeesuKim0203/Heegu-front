@@ -44,6 +44,9 @@ import {
 
     longTextTitleIntroduction,
     longTextTitleLearned,
+
+    // ballon text
+    ballon
     
 } from 'util/text'
 
@@ -90,6 +93,7 @@ function HomeContainer ({
                             contactUsTitle = { contactUsTitle }
                             contactUsInputPlaceHolder = { contactUsInputPlaceHolder[language] }
                             contactUsTextAreaPlaceHolder = { contactUsTextAreaPlaceHolder[language] }
+                            ballon = { ballon[language] }
                             language = { language }
                         />
                     </Wrap>
