@@ -43,6 +43,7 @@ function BlogWriting({
                             blogBigMenu = { blogBigMenu[language] }
                             blogSideMenuTitle = { blogSideMenuTitle } 
                             ballon = { ballon[language] }
+                            blogsType = { [ ...setDataLanguage(blogs, language).map(value => value.type) ] }
                             language = { language }
                         />
                         <BlogWrap>

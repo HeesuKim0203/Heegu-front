@@ -25,7 +25,7 @@ function BlogSideMenu({
     language
 }) {
     const router = useRouter() ;
-    const [ menuStatus, setMenuStatus ] = useState(null) ;
+    const [ menuStatus, setMenuStatus ] = useState(null) 
 
     // Initialization menuStatus
     useEffect(() => {

@@ -32,19 +32,22 @@ export const getStaticPaths = async ({ locales }) => {
         data : blogs
     } = await getBlogs() ;
 
-    const pathsArray = blogs.map(value => (
-      locales.map(locale => {
+    const pathsArray = blogs.map(value => {
+      return locales.map(locale => {
         return ({
           params: { id: value._id },
           locale
         })
       })
-    )) ;
+    }) ;
 
-    const paths = pathsArray.reduce((prev, value) => ([
+    const paths = pathsArray.reduce((prev, value) => {
+      
+      return [
         ...prev,
         ...value
-    ]), []) ;
+      ]
+    }, []) ;
 
     return { paths, fallback: false }
   }
