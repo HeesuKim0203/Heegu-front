@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-export const BASE_URL = "http://www.heegublog.com/api" ;
+export const BASE_URL = "https://www.heegublog.com/api" ;
 
 const api = axios.create({
     baseURL : BASE_URL,
