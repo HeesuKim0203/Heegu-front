@@ -16,11 +16,18 @@ import '@uiw/react-markdown-preview/markdown.css'
 
 import 'styles/font.css'
 
+import { HOME } from 'util/text'
+import Seo from 'components/Seo'
+
 export default function App({ Component, pageProps }) {
   return (
     <>
-      <Head>
+    <Head>
         <title>{ siteTitle }</title>
+        <Seo 
+          url = { HOME }
+          description = "Let me introduce the developer Kim Heesu."
+        />
       </Head>
       <CookiesProvider>
         <ThemeProvider theme = { theme }>

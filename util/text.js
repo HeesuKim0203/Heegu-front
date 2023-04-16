@@ -173,6 +173,19 @@ const relatedWritingText = [
 
 //
 
+// Web Data 
+
+const webData = {
+    webUrl : 'https://www.heegublog.com',
+    titleData : 'Heegu Blog',
+    name : 'heesu kim'
+} ;
+
+const HOME = '/'
+const BLOG = '/blog'
+
+//
+
 export const {
     aboutIntroductoryText : aboutIntroductory,
     contactUsInputPlaceHolderText : contactUsInputPlaceHolder,
@@ -218,4 +231,8 @@ export {
     longTextTitleLearned,
 
     blogSideMenuTitle,
+
+    webData,
+    HOME,
+    BLOG
 }
