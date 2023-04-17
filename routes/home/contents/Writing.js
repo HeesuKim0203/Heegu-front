@@ -60,7 +60,7 @@ function WritingContents({
                                             <ItemTextArea>
                                                 <ItemTitle>{ value.title }</ItemTitle>
                                                 <ItemDescription>{ value.introduction }</ItemDescription>
-                                                <ItemDate>{ value.date }</ItemDate>
+                                                <ItemDate>{ value.writingDate.substr(0, 10).replaceAll('-', '.') }</ItemDate>
                                             </ItemTextArea>
                                         </Item>
                                     </ItemLink>

@@ -44,7 +44,7 @@ const ItemTextArea = styled.div`
 `;
 
 const ItemTitle = styled.h3`
-    height : 65px ;
+    height : 40px ;
     margin-top : 35px ;
 
     font-size : 20px ;
