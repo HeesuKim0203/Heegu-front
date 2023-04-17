@@ -67,7 +67,7 @@ function BlogSideMenu({
                                 >
                                     <BlogSideBigMenuTitle>
                                         { value.name }
-                                        { !smallMenuStatus && <Ballon> { ballon } </Ballon> }
+                                        { (index !== 0 && !smallMenuStatus) && <Ballon> { ballon } </Ballon> }
                                     </BlogSideBigMenuTitle>
                                     { smallMenuStatus && 
                                         <BlogSideBigMenuButton 
