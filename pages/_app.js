@@ -25,6 +25,7 @@ export default function App({ Component, pageProps }) {
     <Head>
         <title>{ siteTitle }</title>
         <Seo 
+          title = { siteTitle }
           url = { HOME }
           description = "Let me introduce the developer Kim Heesu."
         />

@@ -61,13 +61,13 @@ const Seo = ({ title, url, description, type, image }) => {
         <>
             {/* <title>{title}</title> */}
             <meta property="og:title" content={title}/>
-            <meta property="og:type" content="Blog"/>
+            <meta property="og:type" content="website"/>
             <meta property="og:url" content={`${webUrl}${url}`}/>
-            <meta property="og:image" content={image}/>
+            <meta property="og:image" content="/logo192.png"/>
             <meta property="og:description" content={description} />
             <meta name="url" content={`${webUrl}${url}`} />
             <meta name="description" content={description} />
-            <meta name="image" content={`${webUrl}${url}`} />
+            <meta name="image" content="/logo192.png" />
             <script type="application/ld+json">{JSON.stringify(jsonLd)}</script>
         </>
     );

@@ -9,12 +9,13 @@ import {
 
 function BlogHeader({ 
     numberOfBlogs,
-    blogNum
+    blogNum,
+    blogid
 }) {
     return (
         <BlogContentsHeader>
             <BlogContentsMember>{ `${numberOfBlogs}( ` }</BlogContentsMember>
-            <BlogContentsMemberEffect>{ blogNum }</BlogContentsMemberEffect>
+            <BlogContentsMemberEffect>{ blogid ? `${blogNum} | ${blogid}` : blogNum }</BlogContentsMemberEffect>
             <BlogContentsMember> )</BlogContentsMember>
         </BlogContentsHeader>
     ) ;
