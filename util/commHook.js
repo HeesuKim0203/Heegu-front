@@ -103,7 +103,7 @@ export function fontLoad(...fontString) {
             return new FontFaceObserver(value)
         }) ;
 
-        Promise.all([...font.map(value => value.load()), enFont.load()]).then(function () {
+        Promise.all([...font.map(value => value.load(null, 5)), enFont.load(null, 5)]).then(function () {
             setLoad(true)
         });
 

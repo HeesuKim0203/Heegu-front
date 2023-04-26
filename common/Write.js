@@ -4,6 +4,26 @@ import { useRouter } from 'next/router'
 
 import dynamic from 'next/dynamic'
 
+import { 
+
+  Container,
+  WritingContainer,
+  FormContainer,
+  Form,
+  Fieldset,
+
+  InputTitle,
+  TypeSelect,
+  TypeOption,
+  InputImage,
+  KRDescriptionInput,
+  JPDescriptionInput,
+  Button
+
+} from 'styles/writeStyle/writeStyle'
+
+import { createBlog } from 'util/api'
+
 const MDEditor = dynamic(
   () => import("@uiw/react-md-editor").then((mod) => mod.default),
   { ssr: false }
@@ -14,7 +34,14 @@ function Write(props) {
     const router = useRouter() ;
 
     const [ cookies, _ ] = useCookies(['token']) ;
-    const [ writeDescription, setWriteDescription ] = useState('') ;
+    const [ KRwrite, setWriteKRwrite ] = useState('') ;
+    const [ JPwrite, setWriteJPwrite ] = useState('') ;
+    const [ title, setTitle ] = useState('') ;
+    const [ type, setType ] = useState('') ;
+    const [ image, setImage ] = useState('') ;
+    const [ krDescription, setKRDescription ] = useState('') ;
+    const [ jpDescription, setJPDescription ] = useState('') ;
+    const [ blogData, setBlogData ] = useState({}) ;
 
     useEffect(() => {
         
@@ -22,19 +49,97 @@ function Write(props) {
 
     }, []) ;
 
+    useEffect(() => {
+
+      setBlogData({
+          title,
+          type,
+          image,
+          writingDate : "",
+          realtedWrting : [],
+          "ja-jp": {
+              description : jpDescription,
+              introduction : JPwrite
+          },
+          "ko-kr": {
+              description : krDescription,
+              introduction : KRwrite
+          }
+      }) ;
+
+    }, [
+      title,
+      KRwrite,
+      JPwrite,
+      type,
+      image,
+      krDescription,
+      jpDescription,
+    ]) ;
+
+    async function buttonOnSubmit(e) {
+      e.preventDefault() ;
+      
+      console.log(await createBlog(JSON.stringify(blogData), cookies.token)) ;
+    }
+
     return (
-      <>
+      <Container>
+        <FormContainer>
+          <Form onSubmit = { buttonOnSubmit }>
+            <Fieldset>
+              <InputTitle 
+                placeholder = "Title"
+                onChange = { e => setTitle(e.target.value) }
+              />
+              <TypeSelect
+                onChange = { e => setType(e.target.value) }
+              >
+                <TypeOption 
+                  value = "Cs"
+                >Cs</TypeOption>
+                <TypeOption 
+                  value = "JavaScript"
+                >JavaScript</TypeOption>
+              </TypeSelect>
+              <InputImage 
+                placeholder = "Image"
+                onChange = { e => setImage(e.target.value) }
+              />
+              <KRDescriptionInput 
+                placeholder = "KRDescriptionInput"
+                onChange = { e => setKRDescription(e.target.value) }
+              />
+              <JPDescriptionInput 
+                placeholder = "JPDescriptionInput"
+                onChange = { e => setJPDescription(e.target.value) }
+              />
+              <Button type="submit" >Submit</Button>
+            </Fieldset>
+          </Form>
+        </FormContainer>
         {
-          cookies.token && 
-          <>
+          cookies.token ?
+            (<WritingContainer>
               <MDEditor 
-                value = { writeDescription } 
-                onChange={ setWriteDescription } 
+                id = "1"
+                value = { KRwrite } 
+                onChange={ setWriteKRwrite } 
+                height = "100vh"
+                style = {{
+                  marginTop : "10px",
+                  marginBottom : "20px",
+                }}
+              />
+              <MDEditor 
+                id = "2"
+                value = { JPwrite } 
+                onChange={ setWriteJPwrite } 
                 height = "100vh"
               />
-          </>
+            </WritingContainer>) : (<WritingContainer />)
         }
-      </>
+      </Container>
     );
 }
 

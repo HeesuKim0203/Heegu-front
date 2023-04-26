@@ -5,7 +5,7 @@ const removeImports = require('next-remove-imports')();
 const nextConfig = {
   compiler: {
     styledComponents : { ssr: true, displayName : true, cssProp : true },
-    removeConsole : true,
+    // removeConsole : true,
   },
   i18n: {
     localeDetection : false,

@@ -36,7 +36,7 @@ const Item = styled.div`
 `;
 
 const ItemImage = styled(UrlImage)`
-    height: 230px ;
+    height: 240px ;
 `;
 
 const ItemTextArea = styled.div`

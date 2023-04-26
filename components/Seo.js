@@ -15,7 +15,7 @@ const Seo = ({ title, url, description, type, image }) => {
         }
     ] ;
 
-    if(type) {
+    if( type ) {
         jsonLd.push(
             {
                 '@context' : 'https://schema.org',
@@ -59,7 +59,7 @@ const Seo = ({ title, url, description, type, image }) => {
 
     return (
         <>
-            {/* <title>{title}</title> */}
+            <title>{title}</title>
             <meta property="og:title" content={title}/>
             <meta property="og:type" content="website"/>
             <meta property="og:url" content={`${webUrl}${url}`}/>

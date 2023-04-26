@@ -72,7 +72,7 @@ function BlogWritingContents({
 
         e.preventDefault() ;
 
-        if(e.currentTarget.className != 'anchor') {
+        if( e.currentTarget.className != 'anchor' ) {
             window.open(e.currentTarget.href, '_blank') ;
         }else {
             window.scroll({
@@ -111,6 +111,10 @@ function BlogWritingContents({
                         img : ({ node, ...props }) => 
                             <LazyImage
                                 { ...props }
+                                style = {{
+                                    borderRadius : "10px",
+                                    margin : "10px 0"
+                                }}
                             />
                     }}
                 />

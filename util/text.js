@@ -181,8 +181,13 @@ const webData = {
     name : 'heesu kim'
 } ;
 
-const HOME = '/'
-const BLOG = '/blog'
+const HOME = '/' ;
+const BLOG = '/blog' ;
+const IMAGE = '/image' ;
+
+const ENFONT = 'Poppins' ;
+const KRFONT = 'Noto Sans KR' ;
+const JPFONT = 'Noto Sans JP' ;
 
 //
 
@@ -234,5 +239,10 @@ export {
 
     webData,
     HOME,
-    BLOG
+    BLOG,
+    IMAGE,
+
+    ENFONT,
+    KRFONT,
+    JPFONT,
 }

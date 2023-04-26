@@ -22,19 +22,18 @@ import Seo from 'components/Seo'
 export default function App({ Component, pageProps }) {
   return (
     <>
-    <Head>
-        <title>{ siteTitle }</title>
+      <Head>
         <Seo 
           title = { siteTitle }
           url = { HOME }
-          description = "Let me introduce the developer Kim Heesu."
+          description = "Let me introduce the developer Kim heesu."
         />
       </Head>
       <CookiesProvider>
         <ThemeProvider theme = { theme }>
           <GlobalStyle/>
           <Component 
-            {...pageProps}
+            { ...pageProps }
           />
         </ThemeProvider>
       </CookiesProvider>
