@@ -47,10 +47,6 @@ function BlogWriting({
                             language = { language }
                         />
                         <BlogWrap>
-                            <BlogHeader
-                                 numberOfBlogs = { numberOfBlogs[language] }
-                                 blogNum = { setDataLanguage(blogs, language).length }
-                            />
                             <BlogWritingContents 
                                 language = { language }
                                 relatedWriting = { relatedWriting[language] }
