@@ -5,10 +5,9 @@ import { UrlImage } from 'styles/commonStyle'
 // Modal Style
 
 const Wrap = styled.div`
-    display : ${ props => props.modalDisplay ? "block" : "none" } ;  
+    display : ${ props => props.modalDisplay ? "flex" : "none" } ;  
     position : fixed ;
     z-index : 1001 ; 
-    padding-top: 50px ; 
     left : 0 ;
     top : 0 ;
     width : 100% ; 
@@ -25,7 +24,7 @@ const ProjectContainer = styled.div`
 
     width : 930px ;
 
-    padding : 60px 50px ;
+    padding : 45px 40px ;
 
     margin : auto ;
     border-radius : 10px ;
