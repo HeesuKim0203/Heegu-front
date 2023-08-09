@@ -96,6 +96,7 @@ function BlogWritingContents({
                     style = {{
                         backgroundColor : '#FAFAFA',
                         fontFamily : 'inherit',
+                        color : '#555555'
                     }}
                     components={{
                         a : ({ node, ...props }) =>  
