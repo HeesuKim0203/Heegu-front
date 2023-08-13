@@ -21,6 +21,7 @@ import {
     SubItemIntroduction,
     SubItemDate,
     GoModalIcon,
+    SubItemContainer,
 
 } from 'styles/homeStyle/projectStyle'
 
@@ -74,21 +75,23 @@ function ProjectContents({
                                 </MainItemTextArea>
                             </MainItem>
                         }
-                        { projects.map((value, index) => (
-                            <SubItem 
-                                key = { index }
-                                row = { index + 1 }
-                                select = { select === index ? 1 : 0 }
-                                onClick = { event => subItemOnClick(event, index) }
-                            >
-                                <SubItemImage url = { value.image } />
-                                <SubItemTextArea>
-                                    <SubItemTitle> { value.title } </SubItemTitle>
-                                    <SubItemIntroduction> { value.introduction } </SubItemIntroduction>
-                                    <SubItemDate> { `${value.startDate.substr(0, 7).replaceAll('-', '.') } ~ ${value.deadlineDate.substr(0, 7).replaceAll('-', '.')}` } </SubItemDate>
-                                </SubItemTextArea>
-                            </SubItem>)
-                        )}
+                        <SubItemContainer>
+                            { projects.map((value, index) => (
+                                <SubItem 
+                                    key = { index }
+                                    row = { index + 1 }
+                                    select = { select === index ? 1 : 0 }
+                                    onClick = { event => subItemOnClick(event, index) }
+                                >
+                                    <SubItemImage url = { value.image } />
+                                    <SubItemTextArea>
+                                        <SubItemTitle> { value.title } </SubItemTitle>
+                                        <SubItemIntroduction> { value.introduction } </SubItemIntroduction>
+                                        <SubItemDate> { `${value.startDate.substr(0, 7).replaceAll('-', '.') } ~ ${value.deadlineDate.substr(0, 7).replaceAll('-', '.')}` } </SubItemDate>
+                                    </SubItemTextArea>
+                                </SubItem>)
+                            )}
+                        </SubItemContainer>
                     </ItemsArea>
                 }
             </Container>

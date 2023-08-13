@@ -1,5 +1,6 @@
 import styled from 'styled-components'
 import Image from 'next/image'
+import Link from 'next/link'
 
 import authorPicture from 'public/author_picture.png'
 import { animation } from 'styles/commonStyle'
@@ -81,6 +82,7 @@ const UrlTextArea = styled.div`
 `;
 
 const UrlText = styled.p`
+    display : block ;
     padding : 10px 0 0 0 ;
 
     font-size : 15px ;
@@ -91,7 +93,21 @@ const UrlText = styled.p`
     color : #444444 ;
     
     font-weight : lighter ;
-    cursor : pointer ;
+    cursor : unset ;
+`;
+
+const UrlLink = styled(Link)`
+    display : block ;
+    padding : 10px 0 0 0 ;
+
+    font-size : 15px ;
+    font-family: 'Poppins', sans-serif ;
+
+    user-select : none ;
+
+    color : #444444 ;
+    
+    font-weight : lighter ;
 `;
 
 //
@@ -111,5 +127,5 @@ export {
     Introductory,
     UrlTextArea,
     UrlText,
-
+    UrlLink
 }

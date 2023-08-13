@@ -51,8 +51,8 @@ const aboutIntroductoryText = [
 ] ;
 
 const aboutUrlImformation = [
-    "📨 heesukim998@gmail.com",
-    "💻 https://github.com/HeesuKim0203",
+    { icon : "📨", text : "heesukim998@gmail.com"},
+    { icon : "💻", text : "https://github.com/HeesuKim0203"}
 ] ;
 
 //

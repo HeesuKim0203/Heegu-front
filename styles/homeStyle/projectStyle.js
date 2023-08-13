@@ -36,8 +36,8 @@ const MainItem = styled.div`
 `;
 
 const SubItem = styled.div`
-    grid-column : 2 ;
-    grid-row : ${ props => props.row } ; 
+    /* grid-column : 2 ;
+    grid-row : ${ props => props.row } ;  */
 
     display : flex ;
     flex-direction : row ;
@@ -45,14 +45,13 @@ const SubItem = styled.div`
     padding : 10px ;
     border-radius : 10px ;
 
-    margin-top : -10px ;
-
     border : ${props => props.select ? "1px solid #0AA79B" : "1px solid #FAFAFA"} ;
 
     background-color : ${props => props.select ? "rgba(10, 167, 155, 0.03)" : "none"} ;
-    
 
     cursor : pointer ;
+
+    margin-bottom : 10px ;
 `;
 
 const MainItemImage = styled(UrlImage)`
@@ -174,6 +173,11 @@ const SubItemDate = styled.p`
     color : #999999 ;
 `;
 
+const SubItemContainer = styled.div`
+    height : 620px ;
+    overflow-y : scroll;
+` ;
+
 //
 
 export {
@@ -196,5 +200,5 @@ export {
     SubItemIntroduction,
     SubItemDate,
     GoModalIcon,
-
+    SubItemContainer,
 }

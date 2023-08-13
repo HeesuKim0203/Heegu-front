@@ -12,6 +12,7 @@ import {
     Introductory,
     UrlTextArea,
     UrlText,
+    UrlLink
 
 } from 'styles/homeStyle/aboutStyle'
 
@@ -36,11 +37,25 @@ function About({
                         <Introductory>{ aboutIntroductory }</Introductory>
                         <UrlTextArea>
                             { aboutUrlImformation.map((value, index) => {
-                                return(
-                                    <UrlText 
-                                        key = { index }
-                                    >
-                                    { value }</UrlText>
+                                return( 
+                                <> 
+                                    { index === 0 ? (
+                                            <UrlText 
+                                                key = { index }
+                                            >
+                                            { `${value.icon} ${value.text}` }</UrlText>
+                                        ) : (
+                                            <UrlLink 
+                                                key = { index }
+                                                href = { value.text }
+                                                passHref = { true }
+                                            >
+                                                    { `${value.icon} ${value.text}` }
+                                             
+                                            </UrlLink>
+                                        )
+                                    }
+                                </>
                                 )
                             }) }
                         </UrlTextArea>
