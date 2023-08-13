@@ -31,6 +31,8 @@ function ProjectContents({
     projectTitle
 }) {
 
+    console.log(projects) ;
+
     const [ mainItem, setMainItem ] = useState( projects[0] ) ;
     const [ select, setSelect ] = useState(0) ;
 
