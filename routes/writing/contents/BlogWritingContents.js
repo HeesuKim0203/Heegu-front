@@ -116,7 +116,15 @@ function BlogWritingContents({
                                     borderRadius : "10px",
                                     margin : "10px 0"
                                 }}
-                            />
+                            />,
+                        code : ({ node, ...props}) =>
+                            <code
+                            { ...props }
+                            style = {{
+                                color : '#eeeeee'
+                            }}
+                            >
+                            </code>
                     }}
                 />
                 { !blogWritingContentsLoad && <Loader small = "700px" />}
