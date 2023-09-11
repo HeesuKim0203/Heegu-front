@@ -58,12 +58,12 @@ function Write(props) {
           writingDate : "",
           realtedWrting : [],
           "ja-jp": {
-              description : jpDescription,
-              introduction : JPwrite
+              description : JPwrite,
+              introduction : jpDescription
           },
           "ko-kr": {
-              description : krDescription,
-              introduction : KRwrite
+              description : KRwrite,
+              introduction : krDescription
           }
       }) ;
 

@@ -35,16 +35,16 @@ function Index({}) {
           data : writings
         } = await getBlogs() ;
 
+        console.log(projects.sort((a, b) => new Date(b.startDate) - new Date(a.startDate))) ;
 
         setData({
           careers,
-          projects,
+          projects : projects.sort((a, b) => !(new Date(a.startDate) - new Date(b.startDate))),
           writings
         }) ;
 
       } catch (error) {
 
-        console.log(error) ;
         setNotFound(true) ;
 
       }
@@ -52,7 +52,7 @@ function Index({}) {
 
     initHome() ;
   
-  })
+  }, []) ;
 
   return (
     <>
