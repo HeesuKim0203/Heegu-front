@@ -47,6 +47,8 @@ const BlogContentsItemsDescription = styled.p`
     margin-top : 15px ;
 
     color : #555555 ;
+
+
 `;
 
 const BlogContentsItemsDate = styled.p`

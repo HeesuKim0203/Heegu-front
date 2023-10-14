@@ -38,7 +38,14 @@ function Header({ language }) {
         <Wrap>
             <Container>
                 <TitleContainer>
-                <Title>{ menuTitle }</Title>
+                <Title>
+                    <Link
+                        href={"/"}
+                        locale = { language }
+                    >
+                        { menuTitle }
+                    </Link>
+                </Title>
                 </TitleContainer>
                 <MenuContainer>
                     <Menu>

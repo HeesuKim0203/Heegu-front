@@ -46,7 +46,9 @@ function WritingContents({
                             nextEl: "#slide_next",
                         } }
                     >
-                        { writing.map((value, index) => (
+                        { writing
+                            .sort((a, b) => new Date(b.writingDate) - new Date(a.writingDate))
+                            .map((value, index) => (
                                 <SwiperSlide key = { index } >
                                     <ItemLink
                                         key = { index }

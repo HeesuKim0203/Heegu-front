@@ -22,7 +22,9 @@ function BlogContents({
     return (
         <BlogContentsMain>
             { !query.type ? (
-                blogs.map((value, index) => {
+                blogs
+                    .sort((a, b) => new Date(b.writingDate) - new Date(a.writingDate))
+                    .map((value, index) => {
                     return (
                         <BlogContentsItemLink
                             key = { index }
@@ -44,7 +46,10 @@ function BlogContents({
                         </BlogContentsItemLink>
                     ) ;
                 })) : (
-                    blogs.filter(value => value.type === query.type).map((value, index) => {
+                    blogs
+                        .filter(value => value.type === query.type)
+                        .sort((a, b) => new Date(b.writingDate) - new Date(a.writingDate))
+                        .map((value, index) => {
                         return (
                             <BlogContentsItemLink
                                 key = { index }

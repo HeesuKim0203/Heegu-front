@@ -101,6 +101,9 @@ function Write(props) {
                 <TypeOption 
                   value = "JavaScript"
                 >JavaScript</TypeOption>
+                <TypeOption 
+                  value = "TypeScript"
+                >TypeScript</TypeOption>
               </TypeSelect>
               <InputImage 
                 placeholder = "Image"

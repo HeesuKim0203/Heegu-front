@@ -26,6 +26,10 @@ const MarkdownPreview = dynamic(
     () => import("@uiw/react-markdown-preview").then((mod) => mod.default),
     { ssr: false }
 );
+const MDEditor = dynamic(
+    () => import("@uiw/react-md-editor").then((mod) => mod.default),
+    { ssr: false }
+  );
 
 const LazyImage = memo((props) => {
 
@@ -45,7 +49,7 @@ const LazyImage = memo((props) => {
     )
 }) ;
 
-const H1 = ({ setBlogWritingContentsLoad, ...props }) => {
+const H2 = ({ setBlogWritingContentsLoad, ...props }) => {
 
     // MarkDown preview loading status
     useEffect(() => {
@@ -67,6 +71,10 @@ function BlogWritingContents({
     blogWritingContentsLoad,
     setBlogWritingContentsLoad
 }) {
+    
+    useEffect(() => {
+        console.log(blogWritingContentsLoad) ;
+    }, [ blogWritingContentsLoad ]) ;
  
     function markDownlinkTarget(e) {
 
@@ -85,7 +93,9 @@ function BlogWritingContents({
     }
 
     return (
-        <BlogWritingContentsContainer>
+        <BlogWritingContentsContainer
+            data-color-mode="light"
+        >
             <BlogWritingContentsHeader>
                 <BlogWritingContentsTitle>{ blogs.title }</BlogWritingContentsTitle>
                 <BlogWritingContentsDate>{ blogs.date }</BlogWritingContentsDate>
@@ -93,10 +103,10 @@ function BlogWritingContents({
             <BlogWritingContentsMain>
                 <MarkdownPreview 
                     source = { blogs.description }
+                    
                     style = {{
-                        backgroundColor : '#FAFAFA',
                         fontFamily : 'inherit',
-                        color : '#333333'
+                        backgroundColor : '#FAFAFA'
                     }}
                     components={{
                         a : ({ node, ...props }) =>  
@@ -104,8 +114,8 @@ function BlogWritingContents({
                                 onClick = { markDownlinkTarget }
                                 { ...props }
                             />,
-                        h1 : ({ node, ...props }) =>
-                            <H1
+                        h2 : ({ node, ...props }) =>
+                            <H2
                                 setBlogWritingContentsLoad = { setBlogWritingContentsLoad }
                                 { ...props }
                             />,
@@ -119,12 +129,18 @@ function BlogWritingContents({
                             />,
                         code : ({ node, ...props}) =>
                             <code
-                            { ...props }
-                            style = {{
-                                color : '#eeeeee'
-                            }}
+                                { ...props }
                             >
                             </code>
+                    }}
+                />
+                <MDEditor
+                    value = { blogs.description } 
+                    onChange={ blogs.description } 
+                    height = "100vh"
+                    style = {{
+                    marginTop : "10px",
+                    marginBottom : "20px",
                     }}
                 />
                 { !blogWritingContentsLoad && <Loader small = "700px" />}

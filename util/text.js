@@ -191,6 +191,12 @@ const JPFONT = 'Noto Sans JP' ;
 
 //
 
+// Blog Type
+
+const BLOGTYPE = [ "Cs", "TypeScript" ]
+
+//
+
 export const {
     aboutIntroductoryText : aboutIntroductory,
     contactUsInputPlaceHolderText : contactUsInputPlaceHolder,
@@ -245,4 +251,6 @@ export {
     ENFONT,
     KRFONT,
     JPFONT,
+
+    BLOGTYPE
 }

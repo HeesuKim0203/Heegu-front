@@ -51,6 +51,7 @@ const ItemsDescription = styled.p`
     margin-top : 20px ;
 
     color : #555555 ;
+
     line-height : 170% ;
 
     white-space : pre-wrap ;

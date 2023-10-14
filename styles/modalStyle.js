@@ -128,6 +128,7 @@ const ProjectLongText = styled.p`
     margin-top : 20px ;
 
     color : #555555 ;
+    
     line-height : 180% ;
 `;
 

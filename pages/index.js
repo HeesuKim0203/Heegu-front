@@ -37,7 +37,7 @@ function Index({}) {
 
         setData({
           careers,
-          projects : projects.sort((a, b) => !(new Date(a.startDate) - new Date(b.startDate))),
+          projects : projects.sort((a, b) => new Date(b.startDate) - new Date(a.startDate)),
           writings
         }) ;
 

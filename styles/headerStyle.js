@@ -11,6 +11,8 @@ const Wrap = styled.header`
     top : 0 ;
 
     background-color : #FAFAFA ;
+    color : #000000 ;
+
 
     opacity : 0.95 ;
 

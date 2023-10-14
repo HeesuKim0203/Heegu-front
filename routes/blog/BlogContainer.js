@@ -39,7 +39,7 @@ function BlogContainer({
                             blogBigMenu = { blogBigMenu[language] }
                             blogSideMenuTitle = { blogSideMenuTitle } 
                             ballon = { ballon[language] }
-                            blogsType = { [ ...new Set(setDataLanguage(blogs, language).map(value => value.type)) ] }
+                            blogsType = { [ "Cs", "TypeScript" ] }
                             language = { language }
                         />
                         <BlogWrap>

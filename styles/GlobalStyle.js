@@ -12,7 +12,8 @@ const GlobalStyle = createGlobalStyle`
 
     /* Basic Style */
     body { 
-        background-color : #FAFAFA ; 
+        background-color : #FAFAFA ;
+        color : #000000 ;
     }
 
     #wrap {
@@ -20,7 +21,7 @@ const GlobalStyle = createGlobalStyle`
     }
 
     a {
-        color : black ;
+        color : #000000 !important ;
         text-decoration : none ;
     }
 
@@ -34,6 +35,7 @@ const GlobalStyle = createGlobalStyle`
     .fullheight{
         height : 92vh ;
     }
+
 ` ;
 
 export { 

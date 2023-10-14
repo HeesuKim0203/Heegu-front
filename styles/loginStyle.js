@@ -48,6 +48,7 @@ const IdInput = styled.input.attrs(props => ({
     font-size : 18px ;
     color : #555555 ;
 
+
     ${focusStyle}
 
 `;

@@ -105,6 +105,7 @@ const MainItemDescription = styled(TextEllipsis)`
     line-height : 170% ;
 
     color : #555555 ;
+
 `; 
 
 const MainItemSkillArea = styled.div`

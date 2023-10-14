@@ -47,6 +47,7 @@ const InputTitle = styled.input`
     font-size : 18px ;
     color : #555555 ;
 
+
     font-family : ${props => props.theme[props.language]} ;
 
     ${ focusStyle }
