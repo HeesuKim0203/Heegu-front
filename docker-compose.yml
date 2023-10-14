@@ -16,7 +16,7 @@ services:
     environment:
       - TZ=Asia/Seoul
   blue:
-    image: ${DOCKER_REGISTRY}/${DOCKER_APP_NAME}:${DOCKER_IMAGE_TAG}
+    image: ${DOCKER_APP_NAME}:${DOCKER_IMAGE_TAG}
     container_name: ${DOCKER_APP_NAME}-blue
     restart: always
     expose:

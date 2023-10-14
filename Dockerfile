@@ -1,6 +1,6 @@
 # infra/Dockerfile
 
-FROM ubuntu:18.04 AS base
+FROM node:18-alpine AS base
 
 FROM base AS deps
 
@@ -9,7 +9,7 @@ RUN apk add --no-cache libc6-compat
 WORKDIR /app
 
 # Package install
-COPY package.json package-lock.json ./
+COPY package.json ./
 RUN npm install
 
 FROM base AS builder
