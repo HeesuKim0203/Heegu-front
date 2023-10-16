@@ -16,10 +16,11 @@ import {
     ballon,
 
     numberOfBlogs,
-    relatedWriting
+    relatedWriting,
+    BLOGTYPE
 
 } from 'util/text'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 
 function BlogWriting({
     data : {
@@ -29,6 +30,10 @@ function BlogWriting({
 }) {
 
     const [ blogWritingContentsLoad, setBlogWritingContentsLoad ] = useState(false) ;
+
+    useEffect(() => {
+        console.log(blogs) ;
+    }, [ blogs ])
 
     return (
         <>
@@ -43,7 +48,7 @@ function BlogWriting({
                             blogBigMenu = { blogBigMenu[language] }
                             blogSideMenuTitle = { blogSideMenuTitle } 
                             ballon = { ballon[language] }
-                            blogsType = { [ "Cs", "TypeScript" ] }
+                            blogsType = { BLOGTYPE }
                             language = { language }
                         />
                         <BlogWrap>
