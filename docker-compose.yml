@@ -14,15 +14,15 @@ services:
       - ./logs/nginx/:/var/log/nginx/
       - ./nginx/:/etc/nginx/conf.d/
     environment:
-      - TZ=Asia/Seoul
+      - TZ=Asia/Tokyo
   blue:
-    image: ${DOCKER_APP_NAME}:${DOCKER_IMAGE_TAG}
+    image: ${DOCKER_REGISTRY}/${DOCKER_APP_NAME}:${DOCKER_IMAGE_TAG}
     container_name: ${DOCKER_APP_NAME}-blue
     restart: always
     expose:
       - 3000
     environment:
-      - TZ=Asia/Seoul
+      - TZ=Asia/Tokyo
   green:
     image: ${DOCKER_REGISTRY}/${DOCKER_APP_NAME}:${DOCKER_IMAGE_TAG}
     container_name: ${DOCKER_APP_NAME}-green
@@ -30,4 +30,4 @@ services:
     expose:
       - 3000
     environment:
-      - TZ=Asia/Seoul
+      - TZ=Asia/Tokyo
