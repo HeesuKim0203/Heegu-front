@@ -1,6 +1,6 @@
 #!/bin/bash
 
-IS_BLUE_UP=$(docker ps | grep ${DOCKER_APP_NAME}-blue)
+IS_BLUE_UP=$(docker ps | grep -e ${DOCKER_APP_NAME}-blue)
 
 docker-compose up -d nginx
 
