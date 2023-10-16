@@ -15,7 +15,8 @@ import {
     blogSideMenuTitle, 
     ballon,
 
-    numberOfBlogs
+    numberOfBlogs,
+    BLOGTYPE
 
 } from 'util/text'
 
@@ -39,7 +40,7 @@ function BlogContainer({
                             blogBigMenu = { blogBigMenu[language] }
                             blogSideMenuTitle = { blogSideMenuTitle } 
                             ballon = { ballon[language] }
-                            blogsType = { [ "Cs", "TypeScript" ] }
+                            blogsType = { BLOGTYPE }
                             language = { language }
                         />
                         <BlogWrap>

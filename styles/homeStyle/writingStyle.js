@@ -96,7 +96,7 @@ const MoreButton = styled(Link)`
     text-align : center ;
     line-height : 55px ;
 
-    color : #0AA79B ;
+    color : #0AA79B !important;
 
     background-color : #FAFAFA ;
 
@@ -104,7 +104,7 @@ const MoreButton = styled(Link)`
 
     &:hover {
 
-        color : #ffffff ;
+        color : #ffffff !important;
         background-color : #0AA79B ;
 
         transition : all 0.2s ;

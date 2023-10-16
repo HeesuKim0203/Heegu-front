@@ -46,7 +46,6 @@ function Header({ language }) {
                             { menuTitle }
                         </Link>
                     </Title>
-                    <h1>Test</h1>
                 </TitleContainer>
                 <MenuContainer>
                     <Menu>
