@@ -47,10 +47,12 @@ jobs:
 
       - name: Deploy on EC2 instance
         uses: appleboy/ssh-action@v0.1.6
+        
         env :
           DOCKER_REGISTRY: ${{ secrets.DOCKER_USERNAME }}
           DOCKER_IMAGE_TAG: latest
           DOCKER_APP_NAME: ${{ secrets.DOCKER_APP_NAME }}
+          
         with:
           host: ${{ env.EC2_IP_ADDRESS }}
           username: ubuntu
