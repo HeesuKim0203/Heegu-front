@@ -1,5 +1,4 @@
 // Language
-
 const KR = "ko-kr" ;
 const JP = "ja-jp" ;
 
