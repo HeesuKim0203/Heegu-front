@@ -15,6 +15,8 @@ services:
       - ./nginx/:/etc/nginx/conf.d/
     environment:
       - TZ=Asia/Tokyo
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
   blue:
     image: ${DOCKER_REGISTRY}/${DOCKER_APP_NAME}:${DOCKER_IMAGE_TAG}
     container_name: ${DOCKER_APP_NAME}-blue

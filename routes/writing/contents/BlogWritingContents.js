@@ -134,15 +134,6 @@ function BlogWritingContents({
                             </code>
                     }}
                 />
-                <MDEditor
-                    value = { blogs.description } 
-                    onChange={ blogs.description } 
-                    height = "100vh"
-                    style = {{
-                    marginTop : "10px",
-                    marginBottom : "20px",
-                    }}
-                />
                 { !blogWritingContentsLoad && <Loader small = "700px" />}
             </BlogWritingContentsMain>
             <BlogWritingContentsFooter>
