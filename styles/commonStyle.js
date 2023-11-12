@@ -5,7 +5,6 @@ import { BASE_URL } from 'util/api'
 
 const Wrap = styled.div`
     width : 1194px ;
-
     margin : 167px auto 80px auto ;
 `;
 
@@ -66,7 +65,13 @@ const focusStyle = `
 // Blog Common Style
 
 const BlogWrap = styled.div`
-    margin-left : 305px ;
+    @media ${props => props.theme.mobileL} {
+        margin : 0 auto ;
+    }
+`;
+
+const BlogPageWrap = styled.div`
+    display : flex ;
 `;
 
 const BlogContentsHeader = styled.div`
@@ -130,6 +135,7 @@ export {
     focusStyle,
 
     BlogWrap,
+    BlogPageWrap,
 
     BlogContentsHeader,
     BlogContentsMember,

@@ -96,6 +96,7 @@ function HomeContainer ({
                             ballon = { ballon[language] }
                             language = { language }
                         />
+                        <Footer />
                     </Wrap>
                     <Modal
                         modalDisplay = { modalDisplay }
@@ -109,7 +110,6 @@ function HomeContainer ({
                         longTextTitleLearned = { longTextTitleLearned }
                     />
                     </PageContainer>
-                    <Footer />
                 </>
             }
         </>

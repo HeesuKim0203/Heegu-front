@@ -71,10 +71,6 @@ function BlogWritingContents({
     blogWritingContentsLoad,
     setBlogWritingContentsLoad
 }) {
-    
-    useEffect(() => {
-        console.log(blogWritingContentsLoad) ;
-    }, [ blogWritingContentsLoad ]) ;
  
     function markDownlinkTarget(e) {
 
