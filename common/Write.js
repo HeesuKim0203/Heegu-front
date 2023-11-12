@@ -79,8 +79,10 @@ function Write(props) {
 
     async function buttonOnSubmit(e) {
       e.preventDefault() ;
-      
-      console.log(await createBlog(JSON.stringify(blogData), cookies.token)) ;
+
+      const response = await createBlog(JSON.stringify(blogData), cookies.token) ;
+
+      console.log(response) ;
     }
 
     return (

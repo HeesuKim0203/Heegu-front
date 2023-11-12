@@ -3,6 +3,7 @@ import Link from 'next/link'
 
 const BlogWritingContentsContainer = styled.div`
     margin-top : 25px ;
+    width : 760px ;
 `;
 
 const BlogWritingContentsHeader = styled.div`

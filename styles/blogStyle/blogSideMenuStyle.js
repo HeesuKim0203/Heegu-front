@@ -6,9 +6,11 @@ import blogSideMenuOn from 'public/blog_side_menu_on.svg'
 import blogSideMenuOff from 'public/blog_side_menu_off.svg'
 
 const BlogSideMenuWrap= styled.div`
-    margin-right : 130px ;
+    padding-right : 130px ;
 
-    position : fixed ;
+    @media ${props => props.theme.mobileL} {
+        display : none ;
+    }
 `;
 
 const BlogSideMenuContainer= styled.div`

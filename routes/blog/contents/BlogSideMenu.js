@@ -55,7 +55,6 @@ function BlogSideMenu({
             <BlogSideMenuContainer>
                 { menuStatus && blogBigMenu && 
                     blogBigMenu.map((value, index) => {
-                        console.log(blogsType) ;
                         const smallMenuStatus = value.smallMenu.length !== 0 ;
                         return (
                             <BlogSideBigMenu
