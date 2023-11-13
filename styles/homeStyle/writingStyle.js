@@ -18,7 +18,6 @@ import {
 // Writing Style
 
 const Wrap = styled(ContentsContainer)`
-    
 `;
 
 const Container = styled(Contents)`
@@ -33,10 +32,20 @@ const Item = styled.div`
     width : 378px ;
 
     cursor : pointer ;
+
+    @media ${props => props.theme.mobileL} {
+        box-sizing: border-box ;
+        width : 30vw ;
+    }
 `;
 
 const ItemImage = styled(UrlImage)`
     height: 240px ;
+
+    @media ${props => props.theme.mobileL} {
+        box-sizing: border-box ;
+        height: 80px ;
+    }
 `;
 
 const ItemTextArea = styled.div`
@@ -52,6 +61,14 @@ const ItemTitle = styled.h3`
 
     text-overflow : ellipsis ;
     line-height : 175% ;
+
+    @media ${props => props.theme.mobileL} {
+        height : 20px ;
+        margin-top : 5px ;
+
+        font-size : 12px ;
+        line-height : 120% ;
+    }
 `;
 
 const ItemDescription = styled(TextEllipsis)`
@@ -62,6 +79,14 @@ const ItemDescription = styled(TextEllipsis)`
     color : #555555 ;
     
     line-height : 170% ;
+
+    @media ${props => props.theme.mobileL} {
+        margin-top : 30px ;
+
+        font-size : 10px ;
+        height: 30px ;
+        line-height : 140% ;
+    }
 `;
 
 const ItemDate = styled.p`
@@ -70,6 +95,12 @@ const ItemDate = styled.p`
     font-family : 'Poppins', sans-serif ;
     font-size : 15px ;
     color : #999999 ;
+
+    @media ${props => props.theme.mobileL} {
+        margin-top : 15px ;
+
+        font-size : 8px ;
+    }
 `;
 
 const MoreButtonArea = styled.div`
@@ -109,6 +140,13 @@ const MoreButton = styled(Link)`
 
         transition : all 0.2s ;
     
+    }
+
+    @media ${props => props.theme.mobileL} {
+        width : 100px ;
+        height : 35px ;
+        font-size : 12px ;
+        line-height : 35px ;
     }
 
 `;

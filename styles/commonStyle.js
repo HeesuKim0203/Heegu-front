@@ -8,7 +8,10 @@ const Wrap = styled.div`
     margin : 167px auto 80px auto ;
 
     @media ${props => props.theme.mobileL} {
-        margin : 167px 10px 80px 10px ;
+        width : 100vw ;
+        padding : 0 20px ;
+        margin : 80px auto 60px auto ;
+        box-sizing: border-box;
     }
 `;
 
@@ -18,6 +21,10 @@ const Wrap = styled.div`
 
 const ContentsContainer = styled.div`
     margin-top : 65px ;
+
+    @media ${props => props.theme.mobileL} {
+        margin-top : 45px ;
+    }
 `;
 
 const Contents = styled.div`
@@ -34,11 +41,19 @@ const Title = styled.h2`
     font-weight : bold ;
 
     user-select : none ;
+
+    @media ${props => props.theme.mobileL} {
+        font-size : 18px ;
+    }
 `;
 
 const ItemContainer = styled.div`
     width : 100% ;
     margin-top : 30px ;
+
+    @media ${props => props.theme.mobileL} {
+        margin-top : 15px ;
+    }
 `;
 
 const UrlImage = styled.div`

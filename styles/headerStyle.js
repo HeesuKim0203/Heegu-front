@@ -28,17 +28,26 @@ const Container = styled.div`
     user-select : none ;
 
     @media ${props => props.theme.mobileL} {
-        padding : 40px 0 40px 60px ;
+        width : 468px ;
+        padding : 20px 40px 20px 40px ;
     }
 `;
 
 const TitleContainer = styled.div`
     padding : 0 100px 0 0 ;
+
+    @media ${props => props.theme.mobileL} {
+        padding : 0 10px 0 0 ;
+    }
 `;
 
 const Title = styled.h1`
     font-size : 22px ;
     font-weight : bold ;
+
+    @media ${props => props.theme.mobileL} {
+        font-size : 16px ;
+    }
 `;
 
 const MenuContainer = styled.div`
@@ -53,6 +62,11 @@ const Menu = styled.ul`
 
     font-size : 15px ;
     font-weight : lighter ;
+
+    @media ${props => props.theme.mobileL} {
+        font-size : 12px ;
+        padding : 3px 0 0 0 ;
+    }
 `; 
 
 const MenuItem = styled.li`
@@ -60,6 +74,13 @@ const MenuItem = styled.li`
 
     &:not(:last-child) {
         margin : 0 25px 0 0  ;
+    }
+
+    @media ${props => props.theme.mobileL} {
+        margin : 0 0 0 25px  ;
+        &:not(:last-child) {
+            display : none ;
+        }
     }
 `;
 
@@ -74,7 +95,7 @@ const LanguageContainer = styled.div`
     flex : 1 ;
 
     @media ${props => props.theme.mobileL} {
-        flex : 0.8 ;
+        flex : 0.7 ;
     }
 `;
 

@@ -20,6 +20,11 @@ const Header = styled.div`
     width : 828px ;
 
     ${animation}
+
+    @media ${props => props.theme.mobileL} {
+        width : 100% ;
+        box-sizing: border-box;
+    }
 `;
 
 const Title = styled.h2`
@@ -29,12 +34,20 @@ const Title = styled.h2`
 
     user-select : none ;
     line-height : 150% ;
+
+    @media ${props => props.theme.mobileL} {
+        font-size : 22px ;
+    }
 `;
 
 const Contents = styled.div`
     margin-top : 50px ;
 
     ${animation}
+
+    @media ${props => props.theme.mobileL} {
+        margin-top : 25px ;
+    }
 `;
 
 const AuthorImage = styled(Image).attrs(props => ({
@@ -43,6 +56,11 @@ const AuthorImage = styled(Image).attrs(props => ({
     priority : true
 }))`
     border-radius : 10px ;
+
+    @media ${props => props.theme.mobileL} {
+        width : 100vw ;
+        height : 160px ;
+    }
 `;
 
 const Footer = styled.div`
@@ -66,6 +84,11 @@ const Greeting = styled.p`
     padding : 10px 0 0 0 ;
 
     user-select : none ;
+
+    @media ${props => props.theme.mobileL} {
+        font-size : 14px ;
+        padding : 0 ;
+    }
 `;
 
 const Introductory = styled.p`
@@ -75,10 +98,20 @@ const Introductory = styled.p`
 
     font-size : 15px ;
     user-select : none ;
+
+    @media ${props => props.theme.mobileL} {
+        width : 100% ;
+        font-size : 12px ;
+        padding : 3px 0 0 0 ;
+    }
 `;
 
 const UrlTextArea = styled.div`
     margin-top : 15px ;
+
+    @media ${props => props.theme.mobileL} {
+        margin-top : 5px ;
+    }
 `;
 
 const UrlText = styled.p`
@@ -94,6 +127,12 @@ const UrlText = styled.p`
     
     font-weight : lighter ;
     cursor : unset ;
+
+    @media ${props => props.theme.mobileL} {
+        padding : 5px 0 0 0 ;
+
+        font-size : 10px ;
+    }
 `;
 
 const UrlLink = styled(Link)`
@@ -108,6 +147,12 @@ const UrlLink = styled(Link)`
     color : #444444 ;
     
     font-weight : lighter ;
+
+    @media ${props => props.theme.mobileL} {
+        padding : 5px 0 0 0 ;
+
+        font-size : 10px ;
+    }
 `;
 
 //
