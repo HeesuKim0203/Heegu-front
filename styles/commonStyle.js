@@ -6,6 +6,10 @@ import { BASE_URL } from 'util/api'
 const Wrap = styled.div`
     width : 1194px ;
     margin : 167px auto 80px auto ;
+
+    @media ${props => props.theme.mobileL} {
+        margin : 167px 10px 80px 10px ;
+    }
 `;
 
 //

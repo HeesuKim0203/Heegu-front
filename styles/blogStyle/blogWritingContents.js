@@ -4,6 +4,10 @@ import Link from 'next/link'
 const BlogWritingContentsContainer = styled.div`
     margin-top : 25px ;
     width : 760px ;
+
+    @media ${props => props.theme.mobileL} {
+        width : 100% ;
+    }
 `;
 
 const BlogWritingContentsHeader = styled.div`

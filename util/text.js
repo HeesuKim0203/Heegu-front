@@ -193,7 +193,7 @@ const JPFONT = 'Noto Sans JP' ;
 
 // Blog Type
 
-const BLOGTYPE = [ "Cs", "TypeScript" ]
+const BLOGTYPE = [ "Cs", "TypeScript", "WebAssembly" ]
 
 //
 
