@@ -6,7 +6,8 @@ const BlogWritingContentsContainer = styled.div`
     width : 760px ;
 
     @media ${props => props.theme.mobileL} {
-        width : 100% ;
+        width : 100vw ;
+        padding : 0 20px ;
     }
 `;
 

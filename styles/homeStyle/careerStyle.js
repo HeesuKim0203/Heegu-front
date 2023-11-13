@@ -28,11 +28,22 @@ const Items = styled.div`
     &:not(:last-child) {
         margin-right : 30px  ;
     }
+
+    @media ${props => props.theme.mobileL} {
+        width : 45vw ;
+        box-sizing : border-box ;
+    }
 `;
 
 const ItemsImage = styled(UrlImage)`
     width : 582px ;
     height : 300px ;
+
+    @media ${props => props.theme.mobileL} {
+        width : 45vw ;
+        height : 100px ;
+        box-sizing : border-box ;
+    }
 `;
 
 const TextArea = styled.div`
@@ -45,6 +56,11 @@ const ItemsTitle = styled.h3`
     font-family : 'Poppins', sans-serif ;
     font-size : 21px ;
     font-weight : bold ;
+
+    @media ${props => props.theme.mobileL} {
+        margin-top : 15px ;
+        font-size : 13px ;
+    }
 `;
 
 const ItemsDescription = styled.p`
@@ -55,6 +71,11 @@ const ItemsDescription = styled.p`
     line-height : 170% ;
 
     white-space : pre-wrap ;
+
+    @media ${props => props.theme.mobileL} {
+        margin-top : 5px ;
+        font-size : 10px ;
+    }
 `;
 
 export {

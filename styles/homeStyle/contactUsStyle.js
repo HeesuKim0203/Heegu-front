@@ -12,7 +12,9 @@ import {
 // Contact us Style
 
 const Wrap = styled(ContentsContainer)`
-    
+    @media ${props => props.theme.mobileL} {
+        display : none ;
+    }
 `;
 
 const Contaienr = styled(Contents)`

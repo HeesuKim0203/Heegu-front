@@ -28,16 +28,25 @@ const ItemsArea = styled(ItemContainer)`
 
     grid-row-gap : 40px ;
     grid-column-gap : 30px ;
+
+    @media ${props => props.theme.mobileL} {
+        display : flex ;
+        box-sizing: border-box;
+        height : 400px ;
+    }
 `;
 
 const MainItem = styled.div`
     grid-column : 1 / 2 ;
     grid-row : 1 / 4 ;
+
+    @media ${props => props.theme.mobileL} {
+        grid-column : none ;
+        grid-row : none ;
+    }
 `;
 
 const SubItem = styled.div`
-    /* grid-column : 2 ;
-    grid-row : ${ props => props.row } ;  */
 
     display : flex ;
     flex-direction : row ;
@@ -52,11 +61,21 @@ const SubItem = styled.div`
     cursor : pointer ;
 
     margin-bottom : 10px ;
+
+    @media ${props => props.theme.mobileL} {
+        display : none ;
+    }
 `;
 
 const MainItemImage = styled(UrlImage)`
     width : 582px ;
     height : 320px ;
+
+    @media ${props => props.theme.mobileL} {
+        width : 100vw ;
+        height : 200px ;
+        box-sizing: border-box ;
+    }
 `; 
 
 const MainItemTextArea = styled.div`
@@ -80,6 +99,11 @@ const MainItemTitle = styled.h3`
     &:hover {
         text-decoration : underline ;
     }
+
+    @media ${props => props.theme.mobileL} {
+        font-size : 16px ;
+        margin-top : 15px ;
+    }
 `; 
 
 const GoModalIcon = styled(Image).attrs(props => ({
@@ -94,6 +118,11 @@ const MainItemResponsibility = styled.p`
 
     font-size : 15px ;
     font-weight : bold ;
+
+    @media ${props => props.theme.mobileL} {
+        margin-top : 15px ;
+        font-size : 13px ;
+    }
 `;
 
 const MainItemDescription = styled(TextEllipsis)`
@@ -106,6 +135,13 @@ const MainItemDescription = styled(TextEllipsis)`
 
     color : #555555 ;
 
+    @media ${props => props.theme.mobileL} {
+        margin-top : 15px ;
+        font-size : 13px ;
+
+        height : 70px ;
+    }
+
 `; 
 
 const MainItemSkillArea = styled.div`
@@ -113,6 +149,10 @@ const MainItemSkillArea = styled.div`
     flex-direction : row ;
 
     margin-top : 40px ;
+
+    @media ${props => props.theme.mobileL} {
+        margin-top : 20px ;
+    }
 `; 
 
 const MainItemSkill = styled.p`
@@ -135,6 +175,12 @@ const MainItemSkill = styled.p`
 
     &:not(:last-child) {
         margin-right : 5px ;
+    }
+
+    @media ${props => props.theme.mobileL} {
+        height : 20px ;
+        font-size : 10px ;
+        line-height : 20px ;
     }
 `; 
 

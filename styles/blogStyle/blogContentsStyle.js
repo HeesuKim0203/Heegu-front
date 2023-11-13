@@ -19,11 +19,22 @@ const BlogContentsItems = styled.div`
 
     cursor : pointer ;
 
+    @media ${props => props.theme.mobileL} {
+        width : 100vw ;
+        flex-direction: column-reverse ;
+    }
+
 `;
 
 const BlogContentsItemsTextArea = styled.div`
     width : 480px ;
     margin-right : 30px ;
+
+    @media ${props => props.theme.mobileL} {
+        width : 100% ;
+        box-sizing: border-box;
+        padding : 0 20px ;
+    }
 `;
 
 const BlogContentsItemsTitle = styled.h3`
@@ -31,11 +42,21 @@ const BlogContentsItemsTitle = styled.h3`
     font-weight : bold ;
 
     line-height : 175% ;
+
+    @media ${props => props.theme.mobileL} {
+        font-size : 16px ;
+    }
 `;
 
 const BlogContentsItemsImage = styled(UrlImage)`
     width : 378px ;
     height : 240px ;
+
+    @media ${props => props.theme.mobileL} {
+        height : 240px ;
+        box-sizing: border-box;
+        margin : 0 auto ;
+    }
 `;
 
 const BlogContentsItemsDescription = styled.p`
@@ -48,7 +69,9 @@ const BlogContentsItemsDescription = styled.p`
 
     color : #555555 ;
 
-
+    @media ${props => props.theme.mobileL} {
+        font-size : 12px ;
+    }
 `;
 
 const BlogContentsItemsDate = styled.p`
@@ -59,6 +82,10 @@ const BlogContentsItemsDate = styled.p`
     margin-top : 25px ;
     
     color : #999999 ;
+
+    @media ${props => props.theme.mobileL} {
+        font-size : 12px ;
+    }
 
 `;
 
