@@ -13,9 +13,7 @@ const Wrap = styled.header`
     background-color : #FAFAFA ;
     color : #000000 ;
 
-
     opacity : 0.95 ;
-
 `;
 
 const Container = styled.div`
@@ -28,6 +26,10 @@ const Container = styled.div`
 
     font-family: 'Poppins', sans-serif ;
     user-select : none ;
+
+    @media ${props => props.theme.mobileL} {
+        padding : 40px 0 40px 60px ;
+    }
 `;
 
 const TitleContainer = styled.div`
@@ -70,6 +72,10 @@ const LanguageContainer = styled.div`
     align-items : center ;
 
     flex : 1 ;
+
+    @media ${props => props.theme.mobileL} {
+        flex : 0.8 ;
+    }
 `;
 
 const LanguageImage = styled(Image).attrs(props => ({

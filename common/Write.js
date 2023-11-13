@@ -23,6 +23,7 @@ import {
 } from 'styles/writeStyle/writeStyle'
 
 import { createBlog } from 'util/api'
+import { BLOGTYPE } from 'util/text'
 
 const MDEditor = dynamic(
   () => import("@uiw/react-md-editor").then((mod) => mod.default),
@@ -97,15 +98,15 @@ function Write(props) {
               <TypeSelect
                 onChange = { e => setType(e.target.value) }
               >
-                <TypeOption 
-                  value = "Cs"
-                >Cs</TypeOption>
-                <TypeOption 
-                  value = "JavaScript"
-                >JavaScript</TypeOption>
-                <TypeOption 
-                  value = "TypeScript"
-                >TypeScript</TypeOption>
+                {
+                  BLOGTYPE.map((blogType) => (
+                    <TypeOption 
+                      value = { blogType }
+                    >
+                      { blogType }
+                    </TypeOption>
+                  ))
+                }
               </TypeSelect>
               <InputImage 
                 placeholder = "Image"
