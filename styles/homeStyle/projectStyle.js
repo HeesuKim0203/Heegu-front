@@ -14,7 +14,9 @@ import {
 } from 'styles/commonStyle'
 
 const Wrap = styled(ContentsContainer)`
-    
+    @media ${props => props.theme.mobileL} {
+        margin-top : 40px ;
+    }
 `;
 
 const Container = styled(Contents)`
@@ -30,9 +32,13 @@ const ItemsArea = styled(ItemContainer)`
     grid-column-gap : 30px ;
 
     @media ${props => props.theme.mobileL} {
-        display : flex ;
+        width : 100% ;
+        box-sizing : border-box ;
+        display : block ;
         box-sizing: border-box;
-        height : 400px ;
+        grid-template-columns : none ;
+        grid-row-gap : none ;
+        grid-column-gap : none ;
     }
 `;
 
@@ -41,8 +47,7 @@ const MainItem = styled.div`
     grid-row : 1 / 4 ;
 
     @media ${props => props.theme.mobileL} {
-        grid-column : none ;
-        grid-row : none ;
+        display : none ;
     }
 `;
 
@@ -63,19 +68,17 @@ const SubItem = styled.div`
     margin-bottom : 10px ;
 
     @media ${props => props.theme.mobileL} {
-        display : none ;
+        display : block ;
+        width : 100% ;
+        box-sizing : border-box ;
+        border : none ;
+        background-color : #FAFAFA ;
     }
 `;
 
 const MainItemImage = styled(UrlImage)`
     width : 582px ;
     height : 320px ;
-
-    @media ${props => props.theme.mobileL} {
-        width : 100vw ;
-        height : 200px ;
-        box-sizing: border-box ;
-    }
 `; 
 
 const MainItemTextArea = styled.div`
@@ -99,11 +102,6 @@ const MainItemTitle = styled.h3`
     &:hover {
         text-decoration : underline ;
     }
-
-    @media ${props => props.theme.mobileL} {
-        font-size : 16px ;
-        margin-top : 15px ;
-    }
 `; 
 
 const GoModalIcon = styled(Image).attrs(props => ({
@@ -118,11 +116,6 @@ const MainItemResponsibility = styled.p`
 
     font-size : 15px ;
     font-weight : bold ;
-
-    @media ${props => props.theme.mobileL} {
-        margin-top : 15px ;
-        font-size : 13px ;
-    }
 `;
 
 const MainItemDescription = styled(TextEllipsis)`
@@ -135,13 +128,6 @@ const MainItemDescription = styled(TextEllipsis)`
 
     color : #555555 ;
 
-    @media ${props => props.theme.mobileL} {
-        margin-top : 15px ;
-        font-size : 13px ;
-
-        height : 70px ;
-    }
-
 `; 
 
 const MainItemSkillArea = styled.div`
@@ -149,10 +135,6 @@ const MainItemSkillArea = styled.div`
     flex-direction : row ;
 
     margin-top : 40px ;
-
-    @media ${props => props.theme.mobileL} {
-        margin-top : 20px ;
-    }
 `; 
 
 const MainItemSkill = styled.p`
@@ -176,12 +158,6 @@ const MainItemSkill = styled.p`
     &:not(:last-child) {
         margin-right : 5px ;
     }
-
-    @media ${props => props.theme.mobileL} {
-        height : 20px ;
-        font-size : 10px ;
-        line-height : 20px ;
-    }
 `; 
 
 const SubItemImage = styled(UrlImage)`
@@ -189,10 +165,22 @@ const SubItemImage = styled(UrlImage)`
     height : 165px ;
 
     margin-right : 40px ;
+
+    @media ${props => props.theme.mobileL} {
+        width : 100% ;
+        height : 165px ;
+        margin : none ;
+        box-sizing : border-box ;
+    }
 `;
 
 const SubItemTextArea = styled.div`
     width : 345px ;
+
+    @media ${props => props.theme.mobileL} {
+        width : 100% ;
+        box-sizing : border-box ;
+    }
 `;
 
 const SubItemTitle = styled.h4`
@@ -201,6 +189,11 @@ const SubItemTitle = styled.h4`
     font-family : 'Poppins', sans-serif ;
     font-size : 23px ;
     font-weight : bold ;
+
+    @media ${props => props.theme.mobileL} {
+        margin-top : 15px ;
+        font-size : 20px ;
+    }
 `;
 
 const SubItemIntroduction = styled.p`
@@ -210,6 +203,7 @@ const SubItemIntroduction = styled.p`
     color : #555555 ;
     
     line-height : 170% ;
+
 `;
 
 const SubItemDate = styled.p`
@@ -218,11 +212,20 @@ const SubItemDate = styled.p`
     font-family : 'Poppins', sans-serif ;
     font-size : 15px ;
     color : #999999 ;
+
+    @media ${props => props.theme.mobileL} {
+        font-size : 13px ;
+    }
 `;
 
 const SubItemContainer = styled.div`
     height : 620px ;
-    overflow-y : scroll;
+    overflow-y : scroll ;
+
+    @media ${props => props.theme.mobileL} {
+        height : auto ;
+        overflow-y : none ;
+    }
 ` ;
 
 //

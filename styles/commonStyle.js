@@ -21,10 +21,6 @@ const Wrap = styled.div`
 
 const ContentsContainer = styled.div`
     margin-top : 65px ;
-
-    @media ${props => props.theme.mobileL} {
-        margin-top : 45px ;
-    }
 `;
 
 const Contents = styled.div`
@@ -84,13 +80,14 @@ const focusStyle = `
 // Blog Common Style
 
 const BlogWrap = styled.div`
-    @media ${props => props.theme.mobileL} {
-        margin : 0 auto ;
-    }
+
 `;
 
 const BlogPageWrap = styled.div`
     display : flex ;
+    @media ${props => props.theme.mobileL} {
+        display : block ;
+    }
 `;
 
 const BlogContentsHeader = styled.div`

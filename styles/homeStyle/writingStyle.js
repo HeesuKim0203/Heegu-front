@@ -18,6 +18,9 @@ import {
 // Writing Style
 
 const Wrap = styled(ContentsContainer)`
+    @media ${props => props.theme.mobileL} {
+        margin-top : 40px ;
+    }
 `;
 
 const Container = styled(Contents)`
@@ -34,8 +37,8 @@ const Item = styled.div`
     cursor : pointer ;
 
     @media ${props => props.theme.mobileL} {
+        width : 100% ;
         box-sizing: border-box ;
-        width : 30vw ;
     }
 `;
 
@@ -43,8 +46,8 @@ const ItemImage = styled(UrlImage)`
     height: 240px ;
 
     @media ${props => props.theme.mobileL} {
+        height: 220px ;
         box-sizing: border-box ;
-        height: 80px ;
     }
 `;
 
@@ -57,17 +60,16 @@ const ItemTitle = styled.h3`
     margin-top : 35px ;
 
     font-size : 20px ;
-    font-weight : bold ;
+    font-weight : 700 ;
 
     text-overflow : ellipsis ;
     line-height : 175% ;
 
     @media ${props => props.theme.mobileL} {
-        height : 20px ;
-        margin-top : 5px ;
-
-        font-size : 12px ;
-        line-height : 120% ;
+        height : auto ;
+        margin-top : 15px ;
+        font-size : 20px ;
+        line-height : none ;
     }
 `;
 
@@ -81,11 +83,11 @@ const ItemDescription = styled(TextEllipsis)`
     line-height : 170% ;
 
     @media ${props => props.theme.mobileL} {
-        margin-top : 30px ;
+        margin-top : 10px ;
 
-        font-size : 10px ;
-        height: 30px ;
-        line-height : 140% ;
+        font-size : 14px ;
+        height: auto ;
+        line-height : 170% ;
     }
 `;
 
@@ -99,7 +101,7 @@ const ItemDate = styled.p`
     @media ${props => props.theme.mobileL} {
         margin-top : 15px ;
 
-        font-size : 8px ;
+        font-size : 12px ;
     }
 `;
 
@@ -146,6 +148,7 @@ const MoreButton = styled(Link)`
         width : 100px ;
         height : 35px ;
         font-size : 12px ;
+        margin : 20px auto 0 auto ;
         line-height : 35px ;
     }
 
@@ -164,6 +167,10 @@ const SlidePrev = styled(Image).attrs(props => ({
     z-index : 10 ;
 
     cursor : pointer ;
+
+    @media ${props => props.theme.mobileL} {
+        display : none ;
+    }
 `;
 
 const SlideNext = styled(Image).attrs(props => ({
@@ -179,6 +186,10 @@ const SlideNext = styled(Image).attrs(props => ({
     z-index : 10 ;
 
     cursor : pointer ;
+
+    @media ${props => props.theme.mobileL} {
+        display : none ;
+    }
 `;
 
 const ItemLink = styled(Link)`

@@ -58,8 +58,10 @@ const AuthorImage = styled(Image).attrs(props => ({
     border-radius : 10px ;
 
     @media ${props => props.theme.mobileL} {
-        width : 100vw ;
-        height : 160px ;
+        width : 100% ;
+        height : 140px ;
+
+        box-sizing : border-box ;
     }
 `;
 
@@ -69,6 +71,12 @@ const Footer = styled.div`
 
     margin-top  : 25px ;
     ${animation}
+
+    @media ${props => props.theme.mobileL} {
+        margin-top  : 15px ;
+        justify-content : start ;
+        box-sizing: border-box;
+    }
 `;
 
 const AuthorTextArea = styled.div`

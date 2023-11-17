@@ -14,6 +14,7 @@ const Wrap = styled.header`
     color : #000000 ;
 
     opacity : 0.95 ;
+
 `;
 
 const Container = styled.div`
@@ -28,8 +29,9 @@ const Container = styled.div`
     user-select : none ;
 
     @media ${props => props.theme.mobileL} {
-        width : 468px ;
-        padding : 20px 40px 20px 40px ;
+        width : 100vw ;
+        padding : 20px 0 20px 40px ;
+        box-sizing : border-box ;
     }
 `;
 
@@ -78,6 +80,7 @@ const MenuItem = styled.li`
 
     @media ${props => props.theme.mobileL} {
         margin : 0 0 0 25px  ;
+
         &:not(:last-child) {
             display : none ;
         }
@@ -95,7 +98,7 @@ const LanguageContainer = styled.div`
     flex : 1 ;
 
     @media ${props => props.theme.mobileL} {
-        flex : 0.7 ;
+        flex : 0.85 ;
     }
 `;
 
