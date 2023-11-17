@@ -11,6 +11,10 @@ import {
 
 const Wrap = styled(ContentsContainer)`
     margin-top : 15px ;
+
+    @media ${props => props.theme.mobileL} {
+        margin-top : 40px ;
+    }
 `;
 
 const Container = styled(Contents)`
@@ -20,6 +24,11 @@ const Container = styled(Contents)`
 const ItemsArea = styled(ItemContainer)`
     display : flex ;
     flex-direction : row ;
+
+    @media ${props => props.theme.mobileL} {
+        width : 100% ;
+        box-sizing : border-box ;
+    }
 `;
 
 const Items = styled.div`
@@ -30,8 +39,12 @@ const Items = styled.div`
     }
 
     @media ${props => props.theme.mobileL} {
-        width : 45vw ;
+        width : 50% ;
         box-sizing : border-box ;
+
+        &:not(:last-child) {
+            margin-right : 5% ;
+        }
     }
 `;
 
@@ -40,7 +53,7 @@ const ItemsImage = styled(UrlImage)`
     height : 300px ;
 
     @media ${props => props.theme.mobileL} {
-        width : 45vw ;
+        width : 100% ;
         height : 100px ;
         box-sizing : border-box ;
     }
@@ -60,6 +73,7 @@ const ItemsTitle = styled.h3`
     @media ${props => props.theme.mobileL} {
         margin-top : 15px ;
         font-size : 13px ;
+        line-height : 140% ;
     }
 `;
 
@@ -74,7 +88,7 @@ const ItemsDescription = styled.p`
 
     @media ${props => props.theme.mobileL} {
         margin-top : 5px ;
-        font-size : 10px ;
+        font-size : 12px ;
     }
 `;
 

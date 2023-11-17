@@ -22,6 +22,8 @@ import {
 
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { Autoplay, Navigation } from 'swiper'
+import { useEffect, useState } from 'react'
+import { size } from 'styles/theme'
 
 function WritingContents({ 
     writing,
@@ -30,6 +32,25 @@ function WritingContents({
     language
 }) {
 
+    const [ screenSize, setScreenSize ] = useState(window.innerWidth) ;
+    const [ spaceBetween, setSpaceBetween ] = useState(30) ;
+    const [ slidesPreView, setSlidesPreView ] = useState(3) ;
+    const [ delay, setDelay ] = useState(7000) ;
+
+    useEffect(() => {
+       window.addEventListener('resize', () => {
+        setScreenSize(window.innerWidth) ;
+       }) ;
+    }, []) ;
+
+    useEffect(() => {
+        if( screenSize <= size.mobileL ) {
+            setSlidesPreView(1) ;
+            setSpaceBetween(0) ;
+            setDelay(2000) ;
+        }
+    }, [ screenSize ]) ;
+
     return (
         <Wrap>
             <Container>
@@ -37,9 +58,9 @@ function WritingContents({
                 <ItemArea>
                     <SlidePrev />
                     <Swiper
-                        spaceBetween = { 30 }
-                        slidesPerView = { 3 }
-                        autoplay = { { delay : 7000, disableOnInteraction : false } }
+                        spaceBetween = { spaceBetween }
+                        slidesPerView = { slidesPreView }
+                        autoplay = { { delay : delay, disableOnInteraction : false } }
                         modules = { [ Autoplay, Navigation ] }
                         navigation = { { 
                             prevEl: "#slide_prev",

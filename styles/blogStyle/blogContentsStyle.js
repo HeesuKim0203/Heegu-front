@@ -20,8 +20,9 @@ const BlogContentsItems = styled.div`
     cursor : pointer ;
 
     @media ${props => props.theme.mobileL} {
-        width : 100vw ;
-        flex-direction: column-reverse ;
+        width : 100% ;
+        flex-direction : column-reverse ;
+        box-sizing : border-box ;
     }
 
 `;
@@ -32,8 +33,9 @@ const BlogContentsItemsTextArea = styled.div`
 
     @media ${props => props.theme.mobileL} {
         width : 100% ;
-        box-sizing: border-box;
+        margin-right : 0 ;
         padding : 0 20px ;
+        box-sizing: border-box;
     }
 `;
 
@@ -53,6 +55,7 @@ const BlogContentsItemsImage = styled(UrlImage)`
     height : 240px ;
 
     @media ${props => props.theme.mobileL} {
+        width : 100% ;
         height : 240px ;
         box-sizing: border-box;
         margin : 0 auto ;
