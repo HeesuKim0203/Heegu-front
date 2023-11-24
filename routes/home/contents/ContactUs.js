@@ -1,4 +1,6 @@
+import emailjs from '@emailjs/browser'
 import TitleComponent from 'components/TitleComponent'
+import { useRef } from 'react';
 import { 
 
     Wrap,
@@ -7,6 +9,7 @@ import {
     Form,
     Fieldset,
     InputTitle,
+    InputEmail,
     InputText,
     Button,
 
@@ -17,22 +20,46 @@ import {
 function ContactUsContents({
     contactUsTitle,
     contactUsInputPlaceHolder,
+    contactUsInputPlaceHolderEmail,
     contactUsTextAreaPlaceHolder,
     ballon,
     language
 }) {
+
+    const form = useRef() ;
+    
+    const sendEamil = (e) => {
+        e.preventDefault() ;
+
+        emailjs.sendForm('service_heegu', 'template_038kqdr', form.current, 'HMDcRMvpigN5sIE4k')
+            .then((result) => {
+                console.log(result.text);
+            }, (error) => {
+                console.log(error.text);
+            });
+    }
+
     return (
         <Wrap>
             <Contaienr>
                 <TitleComponent title = { contactUsTitle } />
                 <FormArea>
-                    <Form>
+                    <Form ref = { form } onSubmit = { sendEamil }>
                         <Fieldset>
                             <InputTitle 
+                                type = "text"
+                                name = "user_name"
                                 placeholder = { contactUsInputPlaceHolder } 
                                 language = { language }
                             />
-                            <InputText 
+                            <InputEmail 
+                                type = "email"
+                                name = "user_email"
+                                placeholder = { contactUsInputPlaceHolderEmail } 
+                                language = { language }
+                            />
+                            <InputText
+                                name = "message"
                                 placeholder = { contactUsTextAreaPlaceHolder } 
                                 language = { language }    
                             />

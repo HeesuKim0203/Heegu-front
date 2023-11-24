@@ -77,6 +77,11 @@ const contactUsInputPlaceHolderText = [
     "タイトルをご入力ください",
 ] ;
 
+const contactUsInputPlaceHolderEmailText = [
+    "이메일을 입력해주세요",
+    "メールアドレスをご入力ください",
+] ;
+
 const contactUsTextAreaPlaceHolderText = [
     "내용을 입력해주세요",
     "内容をご入力ください"
@@ -201,6 +206,7 @@ export const {
     aboutIntroductoryText : aboutIntroductory,
     contactUsInputPlaceHolderText : contactUsInputPlaceHolder,
     contactUsTextAreaPlaceHolderText : contactUsTextAreaPlaceHolder,
+    contactUsInputPlaceHolderEmailText : contactUsInputPlaceHolderEmail,
     blogBigMenuText : blogBigMenu,
     numberOfBlogsText : numberOfBlogs,
     ballonText : ballon,
@@ -209,6 +215,7 @@ export const {
     { aboutIntroductoryText },
     { contactUsInputPlaceHolderText },
     { contactUsTextAreaPlaceHolderText },
+    { contactUsInputPlaceHolderEmailText },
     { blogBigMenuText },
     { numberOfBlogsText },
     { ballonText },

@@ -34,6 +34,7 @@ import {
     // ContactUs const text
     contactUsTitle,
     contactUsInputPlaceHolder,
+    contactUsInputPlaceHolderEmail,
     contactUsTextAreaPlaceHolder,
 
     // Modal const text
@@ -93,6 +94,7 @@ function HomeContainer ({
                             contactUsTitle = { contactUsTitle }
                             contactUsInputPlaceHolder = { contactUsInputPlaceHolder[language] }
                             contactUsTextAreaPlaceHolder = { contactUsTextAreaPlaceHolder[language] }
+                            contactUsInputPlaceHolderEmail = { contactUsInputPlaceHolderEmail[language] }
                             ballon = { ballon[language] }
                             language = { language }
                         />

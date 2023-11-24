@@ -55,6 +55,28 @@ const InputTitle = styled.input`
     ${ focusStyle }
 `;
 
+const InputEmail = styled.input`
+    display : block ;
+
+    box-sizing : border-box ;
+
+    width : 100% ;
+    height : 65px ;
+
+    padding-left : 30px ;
+
+    border : 1px solid #D9D9D9 ;
+    border-radius : 10px ;
+
+    font-size : 18px ;
+    color : #555555 ;
+
+
+    font-family : ${props => props.theme[props.language]} ;
+
+    ${ focusStyle }
+`;
+
 const InputText = styled.textarea`
     display : block ;
 
@@ -148,6 +170,7 @@ export {
     Form,
     Fieldset,
     InputTitle,
+    InputEmail,
     InputText,
     Button,
 
