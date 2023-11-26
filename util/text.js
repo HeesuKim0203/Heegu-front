@@ -23,15 +23,15 @@ const menu = [
     },
     { 
         name : "Project",
-        y : 1350,
+        y : 1380,
     },
     { 
         name : "Writing",
-        y : 2070,
+        y : 2200,
     },
     { 
         name : "Contact",
-        y : 2750,
+        y : 2900,
     },
     { 
         name : blogText,

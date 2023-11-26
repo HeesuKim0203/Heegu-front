@@ -18,6 +18,7 @@ import {
 // Writing Style
 
 const Wrap = styled(ContentsContainer)`
+    margin-top : 45px ;
     @media ${props => props.theme.mobileL} {
         margin-top : 40px ;
     }

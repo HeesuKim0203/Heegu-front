@@ -1,6 +1,6 @@
 import emailjs from '@emailjs/browser'
 import TitleComponent from 'components/TitleComponent'
-import { useRef } from 'react';
+import { useRef } from 'react'
 import { 
 
     Wrap,
@@ -31,7 +31,14 @@ function ContactUsContents({
     const sendEamil = (e) => {
         e.preventDefault() ;
 
-        emailjs.sendForm('service_heegu', 'template_038kqdr', form.current, 'HMDcRMvpigN5sIE4k')
+        console.log(form.current) ;
+
+        emailjs.sendForm(
+            process.env.NEXT_PUBLIC_EMAIL_ID, 
+            process.env.NEXT_PUBLIC_EMAIL_TEMPLATE_ID, 
+            form.current, 
+            process.env.NEXT_PUBLIC_EMAIL_PUBLIC_KEY
+        )
             .then((result) => {
                 console.log(result.text);
             }, (error) => {
@@ -63,8 +70,8 @@ function ContactUsContents({
                                 placeholder = { contactUsTextAreaPlaceHolder } 
                                 language = { language }    
                             />
-                            <Button type = "button" >
-                                <Ballon>{ ballon }</Ballon>
+                            <Button type = "submit" >
+                                {/* <Ballon>{ ballon }</Ballon> */}
                                 Submit
                             </Button>
                         </Fieldset>
