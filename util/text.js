@@ -23,15 +23,15 @@ const menu = [
     },
     { 
         name : "Project",
-        y : 1350,
+        y : 1380,
     },
     { 
         name : "Writing",
-        y : 2070,
+        y : 2200,
     },
     { 
         name : "Contact",
-        y : 2750,
+        y : 2900,
     },
     { 
         name : blogText,
@@ -75,6 +75,11 @@ const contactUsTitle = "#Contact Us" ;
 const contactUsInputPlaceHolderText = [
     "제목을 입력해주세요",
     "タイトルをご入力ください",
+] ;
+
+const contactUsInputPlaceHolderEmailText = [
+    "이메일을 입력해주세요",
+    "メールアドレスをご入力ください",
 ] ;
 
 const contactUsTextAreaPlaceHolderText = [
@@ -201,6 +206,7 @@ export const {
     aboutIntroductoryText : aboutIntroductory,
     contactUsInputPlaceHolderText : contactUsInputPlaceHolder,
     contactUsTextAreaPlaceHolderText : contactUsTextAreaPlaceHolder,
+    contactUsInputPlaceHolderEmailText : contactUsInputPlaceHolderEmail,
     blogBigMenuText : blogBigMenu,
     numberOfBlogsText : numberOfBlogs,
     ballonText : ballon,
@@ -209,6 +215,7 @@ export const {
     { aboutIntroductoryText },
     { contactUsInputPlaceHolderText },
     { contactUsTextAreaPlaceHolderText },
+    { contactUsInputPlaceHolderEmailText },
     { blogBigMenuText },
     { numberOfBlogsText },
     { ballonText },
