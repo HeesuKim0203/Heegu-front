@@ -109,7 +109,6 @@ export function fontLoad(...fontString) {
 
     }, []) ;
 
-
     return { load } ;
 } 
 

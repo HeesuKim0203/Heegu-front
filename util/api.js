@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-export const BASE_URL = 'https://www.heegublog.com/api' ;
+export const BASE_URL = process.env.NEXT_PUBLIC_API_URL ;
 
 const api = axios.create({
     baseURL : BASE_URL,

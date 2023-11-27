@@ -78,12 +78,15 @@ function Write(props) {
       jpDescription,
     ]) ;
 
-    async function buttonOnSubmit(e) {
+    function buttonOnSubmit(e) {
       e.preventDefault() ;
 
-      const response = await createBlog(JSON.stringify(blogData), cookies.token) ;
-
-      console.log(response) ;
+      createBlog(JSON.stringify(blogData), cookies.token).then((result) => {
+          alert("Create Blogs Sucessfully") ;
+      }, (error) => {
+          alert("Create Blogs failure") ;
+          console.log(error) ;
+      });
     }
 
     return (
