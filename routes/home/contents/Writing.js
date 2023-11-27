@@ -48,6 +48,10 @@ function WritingContents({
             setSlidesPreView(1) ;
             setSpaceBetween(0) ;
             setDelay(2000) ;
+        }else {
+            setSlidesPreView(3) ;
+            setSpaceBetween(30) ;
+            setDelay(7000) ;
         }
     }, [ screenSize ]) ;
 
