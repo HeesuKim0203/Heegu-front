@@ -31,8 +31,6 @@ function ContactUsContents({
     const sendEamil = (e) => {
         e.preventDefault() ;
 
-        console.log(form.current) ;
-
         emailjs.sendForm(
             process.env.NEXT_PUBLIC_EMAIL_ID, 
             process.env.NEXT_PUBLIC_EMAIL_TEMPLATE_ID, 
@@ -40,9 +38,10 @@ function ContactUsContents({
             process.env.NEXT_PUBLIC_EMAIL_PUBLIC_KEY
         )
             .then((result) => {
-                console.log(result.text);
+                alert("Send Mail Sucessfully") ;
             }, (error) => {
-                console.log(error.text);
+                alert("Send Mail failure") ;
+                console.log(error) ;
             });
     }
 
