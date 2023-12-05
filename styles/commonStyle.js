@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import styled from 'styled-components'
 import { BASE_URL } from 'util/api'
 
@@ -5,7 +6,7 @@ import { BASE_URL } from 'util/api'
 
 const Wrap = styled.div`
     width : 1194px ;
-    margin : 167px auto 80px auto ;
+    margin : 137px auto 80px auto ;
 
     @media ${props => props.theme.mobileL} {
         width : 100vw ;

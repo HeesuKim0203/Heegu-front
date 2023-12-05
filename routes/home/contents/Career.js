@@ -1,5 +1,6 @@
 
 import TitleComponent from 'components/TitleComponent'
+import { useRef } from 'react';
 import { 
     
     Wrap,
@@ -27,7 +28,7 @@ function CareerContents({
                             <Items 
                                 key = { index }
                             >
-                                <ItemsImage 
+                                <ItemsImage
                                     url = { value.image }
                                 />
                                 <TextArea>
