@@ -13,6 +13,7 @@ import {
     ItemsDescription,
 
 } from 'styles/homeStyle/careerStyle'
+import { LazyImage } from '../../../util/commHook'
 
 function CareerContents({ 
     careerTitle, 
@@ -28,8 +29,12 @@ function CareerContents({
                             <Items 
                                 key = { index }
                             >
-                                <ItemsImage
-                                    url = { value.image }
+                                <LazyImage 
+                                    width = "582"
+                                    height = "300"
+                                    alt = "Career Image"
+                                    src = { value.image }
+                                    Component = { ItemsImage }
                                 />
                                 <TextArea>
                                     <ItemsTitle>

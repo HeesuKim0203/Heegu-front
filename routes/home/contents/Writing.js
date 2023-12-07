@@ -24,6 +24,7 @@ import { Swiper, SwiperSlide } from 'swiper/react'
 import { Autoplay, Navigation } from 'swiper'
 import { useEffect, useState } from 'react'
 import { size } from 'styles/theme'
+import { LazyImage } from '../../../util/commHook'
 
 function WritingContents({ 
     writing,
@@ -81,9 +82,7 @@ function WritingContents({
                                         locale = { language }
                                     >
                                         <Item key = { index } >
-                                            <ItemImage  
-                                                url = { value.image }
-                                            />
+                                            <ItemImage url = { value.image } />
                                             <ItemTextArea>
                                                 <ItemTitle>{ value.title }</ItemTitle>
                                                 <ItemDescription>{ value.introduction }</ItemDescription>

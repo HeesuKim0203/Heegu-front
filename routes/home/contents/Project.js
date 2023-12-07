@@ -24,6 +24,7 @@ import {
     SubItemContainer,
 
 } from 'styles/homeStyle/projectStyle'
+import { LazyImage } from 'util/commHook';
 
 function ProjectContents({
     setModalStatus,
@@ -55,7 +56,13 @@ function ProjectContents({
                     <ItemsArea>
                         { mainItem && 
                             <MainItem>
-                                <MainItemImage url = { mainItem.image } />
+                                <LazyImage
+                                        width = "582"
+                                        height = "320"
+                                        alt = "Project Main Image"
+                                        src = { mainItem.image }
+                                        Component = { MainItemImage }
+                                    />
                                 <MainItemTextArea>
                                     <MainItemTitle
                                         onClick = { event => setModalStatus( event, mainItem ) }
@@ -83,7 +90,13 @@ function ProjectContents({
                                     select = { select === index ? 1 : 0 }
                                     onClick = { event => subItemOnClick(event, index) }
                                 >
-                                    <SubItemImage url = { value.image } />
+                                    <LazyImage
+                                        width = "270"
+                                        height = "165"
+                                        alt = "Project Sub Image"
+                                        src = { value.image }
+                                        Component = { SubItemImage }
+                                    />
                                     <SubItemTextArea>
                                         <SubItemTitle> { value.title } </SubItemTitle>
                                         <SubItemIntroduction> { value.introduction } </SubItemIntroduction>

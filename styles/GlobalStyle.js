@@ -35,7 +35,6 @@ const GlobalStyle = createGlobalStyle`
     .fullheight{
         height : 92vh ;
     }
-
 ` ;
 
 export { 

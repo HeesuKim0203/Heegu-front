@@ -40,7 +40,7 @@ const Title = styled.h2`
     user-select : none ;
 
     @media ${props => props.theme.mobileL} {
-        font-size : 18px ;
+        font-size : 28px ;
     }
 `;
 

@@ -58,10 +58,12 @@ const AuthorImage = styled(Image).attrs(props => ({
     border-radius : 10px ;
 
     @media ${props => props.theme.mobileL} {
+        //position : relative ;
+
         width : 100% ;
         height : 140px ;
 
-        box-sizing : border-box ;
+        display: none ;
     }
 `;
 
@@ -69,11 +71,10 @@ const Footer = styled.div`
     display : flex ;
     justify-content : end ;
 
-    margin-top  : 25px ;
+    margin-top  : 10px ;
     ${animation}
 
     @media ${props => props.theme.mobileL} {
-        margin-top  : 15px ;
         justify-content : start ;
         box-sizing: border-box;
     }
@@ -85,9 +86,11 @@ const AuthorTextArea = styled.div`
 `;
 
 const Greeting = styled.p`
-    font-family: 'Poppins', sans-serif ;
+    font-family : 'Poppins', sans-serif ;
     font-size : 17px ;
     font-weight : bold ;
+    
+    text-align : right ;
 
     padding : 10px 0 0 0 ;
 
@@ -96,6 +99,7 @@ const Greeting = styled.p`
     @media ${props => props.theme.mobileL} {
         font-size : 14px ;
         padding : 0 ;
+        text-align : left ;
     }
 `;
 
@@ -104,6 +108,8 @@ const Introductory = styled.p`
 
     width : 458px ;
 
+    text-align : right ;
+
     font-size : 15px ;
     user-select : none ;
 
@@ -111,6 +117,7 @@ const Introductory = styled.p`
         width : 100% ;
         font-size : 12px ;
         padding : 3px 0 0 0 ;
+        text-align : left ;
     }
 `;
 
@@ -130,6 +137,7 @@ const UrlText = styled.p`
     font-family: 'Poppins', sans-serif ;
 
     user-select : none ;
+    text-align : right ;
 
     color : #444444 ;
     
@@ -138,6 +146,7 @@ const UrlText = styled.p`
 
     @media ${props => props.theme.mobileL} {
         padding : 5px 0 0 0 ;
+        text-align : left ;
 
         font-size : 10px ;
     }
@@ -151,6 +160,7 @@ const UrlLink = styled(Link)`
     font-family: 'Poppins', sans-serif ;
 
     user-select : none ;
+    text-align : right ;
 
     color : #444444 ;
     
@@ -158,6 +168,8 @@ const UrlLink = styled(Link)`
 
     @media ${props => props.theme.mobileL} {
         padding : 5px 0 0 0 ;
+
+        text-align : left ;
 
         font-size : 10px ;
     }
