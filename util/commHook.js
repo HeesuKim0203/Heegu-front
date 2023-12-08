@@ -1,4 +1,4 @@
-import { useEffect, useState, useRef } from 'react'
+import { useEffect, useState, useRef, memo } from 'react'
 import { useRouter } from 'next/router'
 import FontFaceObserver from 'fontfaceobserver'
 import { menu } from 'util/text'
@@ -112,7 +112,9 @@ export function fontLoad(...fontString) {
     return { load } ;
 } 
 
-export function LazyImageObserver( { src, dataSrc } ) {
+export function LazyImageObserver( srcData, width, height ) {
+
+    const src = process.env.NEXT_PUBLIC_IMAGE_URL + srcData + `?tr=w-1,h-1:w-${width},h-${height}` ;
 
     const [ imageSrc, setImageSrc ] = useState(src) ;
     const imageRef = useRef(null) ;
@@ -129,7 +131,7 @@ export function LazyImageObserver( { src, dataSrc } ) {
 
                     if(entry.isIntersecting) {
                         timeOutClear = setTimeout(() => {
-                            setImageSrc(dataSrc) ;
+                            setImageSrc(process.env.NEXT_PUBLIC_IMAGE_URL + srcData+ `?tr=w-${width},h-${height}`) ;
                         }, 150) ;
                         observer.unobserve( imageRef.current ) ;
                     } 
@@ -145,7 +147,26 @@ export function LazyImageObserver( { src, dataSrc } ) {
             observer && observer.disconnect(imageRef) ;
         } ;
   
-    }, [ imageRef, imageSrc, dataSrc ]) ;
+    }, [ imageRef, imageSrc ]) ;
   
     return { imageSrc, imageRef } ;
 }
+
+export const LazyImage = memo((props) => {
+
+    const { className, src, alt, width, height, style, Component } = props ;
+    const { imageSrc, imageRef } = LazyImageObserver(src, width, height) ;
+
+    return (
+        <Component 
+            className = { className } 
+            ref = { imageRef } 
+            src = { imageSrc } 
+            alt = { alt }
+            width = { width }
+            height = { height }
+            style = { style }
+         />
+    )
+}) ;
+

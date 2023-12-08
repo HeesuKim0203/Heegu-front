@@ -26,7 +26,7 @@ const ItemsArea = styled(ItemContainer)`
 
     @media ${props => props.theme.mobileL} {
         width : 100% ;
-        box-sizing : border-box ;
+        flex-direction : column ;
     }
 `;
 
@@ -38,23 +38,28 @@ const Items = styled.div`
     }
 
     @media ${props => props.theme.mobileL} {
-        width : 50% ;
+        width : 100% ;
         box-sizing : border-box ;
 
         &:not(:last-child) {
-            margin-right : 5% ;
+            margin-right : none  ;
+        }
+
+        &:not(:first-child) {
+            margin-top : 30px  ;
         }
     }
 `;
 
-const ItemsImage = styled(UrlImage)`
+const ItemsImage = styled.img`
     width : 582px ;
     height : 300px ;
 
+    border-radius : 10px ;
+
     @media ${props => props.theme.mobileL} {
         width : 100% ;
-        height : 100px ;
-        box-sizing : border-box ;
+        height : 200px ;
     }
 `;
 
@@ -71,7 +76,7 @@ const ItemsTitle = styled.h3`
 
     @media ${props => props.theme.mobileL} {
         margin-top : 15px ;
-        font-size : 13px ;
+        font-size : 16px ;
         line-height : 140% ;
     }
 `;
@@ -87,7 +92,7 @@ const ItemsDescription = styled.p`
 
     @media ${props => props.theme.mobileL} {
         margin-top : 5px ;
-        font-size : 12px ;
+        font-size : 13px ;
     }
 `;
 

@@ -71,13 +71,12 @@ const SubItem = styled.div`
     @media ${props => props.theme.mobileL} {
         display : block ;
         width : 100% ;
-        box-sizing : border-box ;
         border : none ;
         background-color : #FAFAFA ;
     }
 `;
 
-const MainItemImage = styled(UrlImage)`
+const MainItemImage = styled.img`
     width : 582px ;
     height : 320px ;
 `; 
@@ -161,16 +160,17 @@ const MainItemSkill = styled.p`
     }
 `; 
 
-const SubItemImage = styled(UrlImage)`
+const SubItemImage = styled.img`
     width : 270px ;
     height : 165px ;
 
     margin-right : 40px ;
+    border-radius : 10px ;
 
     @media ${props => props.theme.mobileL} {
         width : 100% ;
-        height : 165px ;
-        margin : none ;
+        height : 195px ;
+        margin-right : none ;
         box-sizing : border-box ;
     }
 `;
@@ -223,9 +223,16 @@ const SubItemContainer = styled.div`
     height : 620px ;
     overflow-y : scroll ;
 
+    -ms-overflow-style : none !important ;
+    scrollbar-width : none !important ;
+
+    &::-webkit-scrollbar {
+        display : none ;
+    }
+
     @media ${props => props.theme.mobileL} {
         height : auto ;
-        overflow-y : none ;
+        overflow : hidden ;
     }
 ` ;
 

@@ -47,8 +47,8 @@ const ItemImage = styled(UrlImage)`
     height: 240px ;
 
     @media ${props => props.theme.mobileL} {
-        height: 220px ;
-        box-sizing: border-box ;
+        margin : 0 auto ;
+        height : 260px ;
     }
 `;
 

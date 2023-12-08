@@ -50,7 +50,7 @@ const BlogContentsItemsTitle = styled.h3`
     }
 `;
 
-const BlogContentsItemsImage = styled(UrlImage)`
+const BlogContentsItemsImage = styled.img`
     width : 378px ;
     height : 240px ;
 
