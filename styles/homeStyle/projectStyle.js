@@ -16,7 +16,7 @@ import {
 const Wrap = styled(ContentsContainer)`
     margin-top : 80px ;
     @media ${props => props.theme.mobileL} {
-        margin-top : 35px ;
+        margin-top : 40px ;
     }
 `;
 

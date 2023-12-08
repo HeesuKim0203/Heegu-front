@@ -20,7 +20,7 @@ import {
 const Wrap = styled(ContentsContainer)`
     margin-top : 45px ;
     @media ${props => props.theme.mobileL} {
-        margin-top : 35px ;
+        margin-top : 40px ;
     }
 `;
 
@@ -47,8 +47,8 @@ const ItemImage = styled(UrlImage)`
     height: 240px ;
 
     @media ${props => props.theme.mobileL} {
-        height : 200px ;
-        box-sizing: border-box ;
+        margin : 0 auto ;
+        height : 260px ;
     }
 `;
 

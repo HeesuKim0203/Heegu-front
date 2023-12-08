@@ -15,6 +15,7 @@ import {
     UrlLink
 
 } from 'styles/homeStyle/aboutStyle'
+import { LazyImage } from '../../../util/commHook'
 
 function About({ 
     aboutTitle,
@@ -29,7 +30,13 @@ function About({
                     <Title>{ aboutTitle }</Title>
                 </Header>
                 <Contents>
-                    <AuthorImage />
+                    <LazyImage 
+                        width = "1194"
+                        height = "425"
+                        alt = "Author Image"
+                        src = "/author_picture_1701962643499.png"
+                        Component = { AuthorImage }
+                    />
                 </Contents>
                 <Footer>
                     <AuthorTextArea>

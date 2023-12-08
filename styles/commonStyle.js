@@ -9,8 +9,8 @@ const Wrap = styled.div`
     margin : 137px auto 80px auto ;
 
     @media ${props => props.theme.mobileL} {
-        width : 100vw ;
-        padding : 0 20px ;
+        width : 100% ;
+        //padding : 0 20px ;
         margin : 80px auto 60px auto ;
         box-sizing: border-box;
     }
@@ -22,6 +22,10 @@ const Wrap = styled.div`
 
 const ContentsContainer = styled.div`
     margin-top : 65px ;
+
+    @media ${props => props.theme.mobileL} {
+        padding : 0 20px ;
+    }
 `;
 
 const Contents = styled.div`

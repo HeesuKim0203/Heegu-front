@@ -12,7 +12,7 @@ import {
 const Wrap = styled(ContentsContainer)`
     margin-top : 40px ;
     @media ${props => props.theme.mobileL} {
-        margin-top : 35px ;
+        margin-top : 40px ;
     }
 `;
 
@@ -60,7 +60,6 @@ const ItemsImage = styled.img`
     @media ${props => props.theme.mobileL} {
         width : 100% ;
         height : 200px ;
-        box-sizing : border-box ;
     }
 `;
 

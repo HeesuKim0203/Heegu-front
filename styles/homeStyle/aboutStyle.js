@@ -1,8 +1,6 @@
 import styled from 'styled-components'
-import Image from 'next/image'
 import Link from 'next/link'
 
-import authorPicture from 'public/author_picture.png'
 import { animation } from 'styles/commonStyle'
 
 // About Style
@@ -14,6 +12,11 @@ const Wrap = styled.div`
 const Container = styled.div`
     display : flex ;
     flex-direction : column ;
+
+    @media ${props => props.theme.mobileL} {
+        width : 100% ;
+        overflow : hidden ;
+    }
 `;
 
 const Header = styled.div`
@@ -23,7 +26,8 @@ const Header = styled.div`
 
     @media ${props => props.theme.mobileL} {
         width : 100% ;
-        box-sizing: border-box;
+        box-sizing: border-box ;
+        padding : 0 20px ;
     }
 `;
 
@@ -36,7 +40,7 @@ const Title = styled.h2`
     line-height : 150% ;
 
     @media ${props => props.theme.mobileL} {
-        font-size : 22px ;
+        font-size : 26px ;
     }
 `;
 
@@ -46,24 +50,24 @@ const Contents = styled.div`
     ${animation}
 
     @media ${props => props.theme.mobileL} {
-        margin-top : 25px ;
+        margin-top : 15px ;
     }
 `;
 
-const AuthorImage = styled(Image).attrs(props => ({
-    src : authorPicture,
-    alt : "Picture of the author",
-    priority : true
-}))`
+const AuthorImage = styled.div`
+    width : 100% ;
+    height : 425px ;
     border-radius : 10px ;
 
+    ${ props => (
+        props.src ? `background-image : url(${ props.src }) ;` : `background-color : #eeeeee ;`
+    )}
+
     @media ${props => props.theme.mobileL} {
-        //position : relative ;
-
         width : 100% ;
-        height : 140px ;
-
-        display: none ;
+        height : 200px ;
+        background-position : 25% 30% ;
+        border-radius : 0px ;
     }
 `;
 
@@ -76,7 +80,8 @@ const Footer = styled.div`
 
     @media ${props => props.theme.mobileL} {
         justify-content : start ;
-        box-sizing: border-box;
+        box-sizing: border-box ;
+        padding : 0 20px ;
     }
 `;
 
