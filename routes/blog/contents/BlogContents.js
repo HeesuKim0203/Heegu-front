@@ -68,8 +68,12 @@ function BlogContents({
                                         <BlogContentsItemsDescription> { value.introduction } </BlogContentsItemsDescription>
                                         <BlogContentsItemsDate> { value.writingDate.substr(0, 10).replaceAll('-', '.') } </BlogContentsItemsDate>
                                     </BlogContentsItemsTextArea>
-                                    <BlogContentsItemsImage 
-                                        url = { value.image }
+                                    <LazyImage 
+                                        width = "378"
+                                        height = "240"
+                                        alt = "Blog Image"
+                                        src = { value.image }
+                                        Component = { BlogContentsItemsImage }
                                     />
                                 </BlogContentsItems>
                             </BlogContentsItemLink>

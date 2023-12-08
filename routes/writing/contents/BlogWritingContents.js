@@ -19,27 +19,20 @@ import {
     BlogWritingContentsFooterItemDate,
 
 } from 'styles/blogStyle/blogWritingContents'
-import { LazyImageObserver } from 'util/commHook'
 import { BASE_URL } from 'util/api'
 
 const MarkdownPreview = dynamic(
     () => import("@uiw/react-markdown-preview").then((mod) => mod.default),
     { ssr: false }
 );
-const MDEditor = dynamic(
-    () => import("@uiw/react-md-editor").then((mod) => mod.default),
-    { ssr: false }
-  );
 
-const LazyImage = memo((props) => {
+const Image = memo((props) => {
 
     const { className, src, alt, width, height, style } = props ;
-    // const { imageSrc, imageRef } = LazyImageObserver({ src, dataSrc : props["data-src"] }) ;
 
     return (
         <img 
             className={className} 
-            // ref={imageRef} 
             src={`${BASE_URL}/image${src}`} 
             alt={alt}
             width={width}
@@ -116,7 +109,7 @@ function BlogWritingContents({
                                 { ...props }
                             />,
                         img : ({ node, ...props }) => 
-                            <LazyImage
+                            <Image
                                 { ...props }
                                 style = {{
                                     borderRadius : "10px",
