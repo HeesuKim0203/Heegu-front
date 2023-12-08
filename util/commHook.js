@@ -97,15 +97,7 @@ export function fontLoad(...fontString) {
 
     useEffect(() => {
 
-        const enFont = new FontFaceObserver('Poppins') ;
-
-        const font = fontString.map((value) => {
-            return new FontFaceObserver(value)
-        }) ;
-
-        Promise.all([...font.map(value => value.load()), enFont.load()]).then(function () {
-            setLoad(true)
-        }, function() { setLoad(true) });
+        setLoad(true) ;
 
     }, []) ;
 
