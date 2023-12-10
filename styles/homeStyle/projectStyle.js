@@ -71,7 +71,9 @@ const SubItem = styled.div`
     @media ${props => props.theme.mobileL} {
         display : block ;
         width : 100% ;
-        border : none ;
+        padding : 0 ;
+        border : 0 ;
+        margin-top : 20px ; 
         background-color : #FAFAFA ;
     }
 `;
@@ -168,10 +170,10 @@ const SubItemImage = styled.img`
     border-radius : 10px ;
 
     @media ${props => props.theme.mobileL} {
-        width : 100% ;
-        height : 195px ;
         margin-right : none ;
-        box-sizing : border-box ;
+        width : 100% ;
+        height : 190px ;
+        border-radius : 10px ;
     }
 `;
 

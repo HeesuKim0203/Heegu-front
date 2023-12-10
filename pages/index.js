@@ -3,19 +3,18 @@ import { useEffect, useState } from 'react';
 import HomeContainer from 'routes/home/HomeContainer'
 import { getProjects, getCareers, getBlogs } from 'util/api'
 import { fontLoad, getPath } from 'util/commHook'
+import { KR } from 'util/data';
 
 // data : Home data
-// notFound : Data existence
 function Index({}) {
 
-  const { load } = fontLoad('Noto Sans KR', 'Noto Sans JP') ;
   const { _, lang } = getPath() ;
+  const { load } = fontLoad(lang === KR ? 'Noto Sans KR' : 'Noto Sans JP') ;
   const [ data, setData ] = useState({
     careers : [],
     projects : [],
     writings : []
   }) ;
-  const [ notFound, setNotFound ] = useState(false) ;
 
   useEffect(() => {
 
@@ -43,7 +42,7 @@ function Index({}) {
 
       } catch (error) {
 
-        setNotFound(true) ;
+        console.log(error) ;
 
       }
     }
@@ -56,7 +55,7 @@ function Index({}) {
     <>
       { 
         load ?
-          (!notFound && 
+          (
             <HomeContainer 
               data = { data }
               language = { lang }

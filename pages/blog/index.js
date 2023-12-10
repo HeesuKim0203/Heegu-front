@@ -5,8 +5,8 @@ import { fontLoad, getPath } from 'util/commHook'
 
 export function Index({ data, notFound }) {
 
-  const { load } = fontLoad('Noto Sans KR', 'Noto Sans JP') ;
   const { _, lang } = getPath() ;
+  const { load } = fontLoad(lang === KR ? 'Noto Sans KR' : 'Noto Sans JP') ;
 
   return (
     <>

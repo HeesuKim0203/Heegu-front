@@ -23,6 +23,10 @@ const BlogWritingContentsTitle = styled.h1`
     line-height : 180% ;
     
     font-family: 'Poppins', sans-serif ;
+
+    @media ${props => props.theme.mobileL} {
+        line-height : 120% ;
+    }
 `;
 
 const BlogWritingContentsDate = styled.p`
