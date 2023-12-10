@@ -33,7 +33,7 @@ function WritingContents({
     language
 }) {
 
-    const [ screenSize, setScreenSize ] = useState(window.innerWidth) ;
+    const [ screenSize, setScreenSize ] = useState(() => window.innerWidth) ;
     const [ spaceBetween, setSpaceBetween ] = useState(30) ;
     const [ slidesPreView, setSlidesPreView ] = useState(3) ;
     const [ delay, setDelay ] = useState(7000) ;
