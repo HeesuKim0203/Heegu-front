@@ -3,6 +3,7 @@ import { setObjectArrayKeyToLanguageData } from 'util/data'
 // Site text
 
 const siteTitle = "HeeGu" ;
+const siteBlogTitle = "HeeGu Blog" ;
 
 //
 
@@ -223,7 +224,9 @@ export const {
 ) ;
 
 export {
+    
     siteTitle,
+    siteBlogTitle,
     menuTitle, 
     menu,
     blogText,

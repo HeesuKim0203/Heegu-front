@@ -1,9 +1,8 @@
-import { webData } from 'util/text'
+import { BLOG, webData } from 'util/text'
 
 const Seo = ({ title, url, description, type, image }) => {
 
     const { webUrl, titleData, name } = webData ;
-
     const jsonLd = [
         {
             '@context' : 'https://schema.org',
@@ -25,7 +24,7 @@ const Seo = ({ title, url, description, type, image }) => {
                         '@type' : 'ListItem',
                         'position' : 1,
                         'item' : {
-                            '@id' : `${webUrl}${DOCUMENT}`,
+                            '@id' : `${webUrl}${BLOG}`,
                             'name' : 'blog',
                             'image' : '/logo512.png'
                         },
@@ -58,8 +57,7 @@ const Seo = ({ title, url, description, type, image }) => {
     } ;
 
     return (
-        <>
-            
+        <>  
             <meta property="og:title" content={title}/>
             <meta property="og:type" content="website"/>
             <meta property="og:url" content={`${webUrl}${url}`}/>
