@@ -71,20 +71,20 @@ export function apiHook(api, query) {
 
 export function fontLoad(...fontString) {
 
-    const [ load, setLoad ] = useState(false) ;
+    const [ load, setLoad ] = useState(true) ;
 
-    useEffect(() => {
+    // useEffect(() => {
 
-        const enFont = new FontFaceObserver('Poppins') ;
-        const font = fontString.map((value) => {
-            return new FontFaceObserver(value)
-        }) ;
+    //     // const enFont = new FontFaceObserver('Poppins') ;
+    //     // const font = fontString.map((value) => {
+    //     //     return new FontFaceObserver(value)
+    //     // }) ;
 
-        Promise.all([...font.map(value => value.load()), enFont.load()]).then(function () {
-            setLoad(true)
-        }, function(err) { console.log(err) }) ;
+    //     // Promise.all([...font.map(value => value.load()), enFont.load()]).then(function () {
+    //     //     setLoad(true)
+    //     // }, function(err) { console.log(err) }) ;
 
-    }, []) ;
+    // }, []) ;
 
 
     return { load } ;
