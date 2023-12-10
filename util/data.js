@@ -44,26 +44,27 @@ const setObjectArrayKeyToLanguageData = (...objArray) => {
 
 const setDataLanguage = ( data, language ) => {
 
-    return data.reduce((prev, value) => {
+    if(data)
+        return data.reduce((prev, value) => {
 
-        return (value.hasOwnProperty( language ) ? 
-            [
-                ...prev,
-                {
-                    ...value[language],
-                    ...value,
-                }
-            ] : 
-            [
-                ...prev,
-                {
-                    value,
-                    ...value
-                }
-            ]
-        )
+            return (value.hasOwnProperty( language ) ? 
+                [
+                    ...prev,
+                    {
+                        ...value[language],
+                        ...value,
+                    }
+                ] : 
+                [
+                    ...prev,
+                    {
+                        value,
+                        ...value
+                    }
+                ]
+            )
 
-    }, []) ;
+        }, []) ;
 }
 
 //

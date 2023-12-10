@@ -22,7 +22,6 @@ const BlogContentsItems = styled.div`
     @media ${props => props.theme.mobileL} {
         width : 100% ;
         flex-direction : column-reverse ;
-        box-sizing : border-box ;
     }
 
 `;

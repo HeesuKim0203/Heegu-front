@@ -47,7 +47,7 @@ function WritingContents({
     useEffect(() => {
         if( screenSize <= size.mobileL ) {
             setSlidesPreView(1) ;
-            setSpaceBetween(0) ;
+            setSpaceBetween(20) ;
             setDelay(2000) ;
         }else {
             setSlidesPreView(3) ;

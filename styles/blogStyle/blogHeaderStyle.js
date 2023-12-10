@@ -4,6 +4,11 @@ const BlogContentsHeader = styled.div`
     font-size : 13px ;
 
     margin-bottom : 40px ;
+
+    @media ${props => props.theme.mobileL} {
+        padding : 0 20px ;
+        margin-bottom : 0 ;
+    }
 `;
 
 const BlogContentsMember = styled.p`

@@ -48,7 +48,8 @@ const ItemImage = styled(UrlImage)`
 
     @media ${props => props.theme.mobileL} {
         margin : 0 auto ;
-        height : 260px ;
+        height : 240px ;
+        background-position : 50% 50% ;
     }
 `;
 

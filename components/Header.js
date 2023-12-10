@@ -1,6 +1,6 @@
 import Link from 'next/link'
 
-import { menuTitle, menu } from 'util/text'
+import { menuTitle, menu, HOME } from 'util/text'
 import { languageData } from 'util/data'
 import { getPath } from 'util/commHook'
 import { useState } from 'react'
@@ -40,7 +40,7 @@ function Header({ language }) {
                 <TitleContainer>
                     <Title>
                         <Link
-                            href={"/"}
+                            href={ HOME }
                             locale = { language }
                         >
                             { menuTitle }

@@ -6,40 +6,18 @@ import { menu } from 'util/text'
 export function getPath() {
 
     const router = useRouter() ;
-    const [ urlPath, setUrlPath ] = useState('') ;
-    const [ lang, setLang ] = useState('') ;
-    const [ query, setQuery ] = useState('') ;
 
-    useEffect(() => {
+    const { locale, asPath, query } = router ;
 
-        const { locale } = router ;
+    const element =  menu.find( value => value.name === asPath.substring(2) ) ;
 
-        setLang(locale) ;
+    element && window.scroll({
+        behavior : 'smooth',
+        left : 0,
+        top : element.y
+    }) ;
 
-    }, []) ;
-
-    useEffect(() => {
-
-        const { asPath, locale, query } = router ;
-
-        const element =  menu.find( value => value.name === asPath.substring(2) ) ;
-
-        if( lang === locale ) {
-            element && window.scroll({
-                behavior : 'smooth',
-                left : 0,
-                top : element.y
-            }) ;
-        }else {
-            setLang(locale) ;
-        }
-
-        setUrlPath(asPath) ;
-        setQuery(query) ;
-
-    }, [ router ]) ;
-
-    return { urlPath, lang, query } ;
+    return { urlPath : asPath, lang : locale, query } ;
 
 }
 
@@ -98,7 +76,6 @@ export function fontLoad(...fontString) {
     useEffect(() => {
 
         const enFont = new FontFaceObserver('Poppins') ;
-
         const font = fontString.map((value) => {
             return new FontFaceObserver(value)
         }) ;
@@ -109,8 +86,6 @@ export function fontLoad(...fontString) {
 
     }, []) ;
 
-
-    return { load } ;
 
     return { load } ;
 } 

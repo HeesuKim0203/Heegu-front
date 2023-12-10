@@ -45,24 +45,24 @@ function About({
                         <UrlTextArea>
                             { aboutUrlImformation.map((value, index) => {
                                 return( 
-                                <> 
-                                    { index === 0 ? (
-                                            <UrlText 
-                                                key = { index }
-                                            >
-                                            { `${value.icon} ${value.text}` }</UrlText>
-                                        ) : (
-                                            <UrlLink 
-                                                key = { index }
-                                                href = { value.text }
-                                                passHref = { true }
-                                            >
-                                                    { `${value.icon} ${value.text}` }
-                                             
-                                            </UrlLink>
-                                        )
-                                    }
-                                </>
+                                    <> 
+                                        { index === 0 ? (
+                                                <UrlText 
+                                                    key = { index }
+                                                >
+                                                { `${value.icon} ${value.text}` }</UrlText>
+                                            ) : (
+                                                <UrlLink 
+                                                    key = { index }
+                                                    href = { value.text }
+                                                    passHref = { true }
+                                                >
+                                                        { `${value.icon} ${value.text}` }
+                                                
+                                                </UrlLink>
+                                            )
+                                        }
+                                    </>
                                 )
                             }) }
                         </UrlTextArea>
