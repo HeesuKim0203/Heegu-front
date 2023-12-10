@@ -1,9 +1,14 @@
 import Loader from 'components/Loader'
-import { useEffect, useState } from 'react';
+import Head from 'next/head'
+import { useEffect, useState } from 'react'
 import HomeContainer from 'routes/home/HomeContainer'
 import { getProjects, getCareers, getBlogs } from 'util/api'
 import { fontLoad, getPath } from 'util/commHook'
 import { KR } from 'util/data' 
+
+import { HOME } from 'util/text'
+import Seo from 'components/Seo'
+import { siteTitle } from 'util/text' 
 
 // data : Home data
 function Index({}) {
@@ -53,6 +58,13 @@ function Index({}) {
 
   return (
     <>
+      <Head>
+        <Seo 
+            title = { siteTitle }
+            url = { `${HOME}${lang}` }
+            description = "Let me introduce the developer Kim heesu."
+        />
+      </Head>
       { 
         load ?
           (

@@ -1,7 +1,12 @@
 import Loader from 'components/Loader'
+import Head from 'next/head'
 import BlogWriting from 'routes/writing/BlogWriting'
 import { getBlogsId, getBlogs } from 'util/api'
 import { fontLoad, getPath } from 'util/commHook'
+import { KR, setDataLanguage } from 'util/data' 
+
+import { BLOG } from 'util/text'
+import Seo from 'components/Seo'
 
 export function Index({ data, notFound }) {
 
@@ -10,6 +15,15 @@ export function Index({ data, notFound }) {
 
   return (
     <>
+      <Head>
+        <Seo 
+          title = { data.blogs[0].title }
+          url = { `/${lang}${BLOG}/${data.blogs[0]._id}` }
+          description = { setDataLanguage(data.blogs, lang)[0].introduction }
+          type = "Blog Posting"
+          image = { process.env.NEXT_PUBLIC_IMAGE_URL + data.blogs[0].image }
+        />
+      </Head>
       { 
         load ?
           (!notFound && 
