@@ -84,6 +84,8 @@ export function fontLoad(...fontString) {
     //     //     setLoad(true)
     //     // }, function(err) { console.log(err) }) ;
 
+        
+
     // }, []) ;
 
 
