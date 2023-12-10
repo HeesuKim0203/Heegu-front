@@ -2,6 +2,7 @@ import Loader from 'components/Loader'
 import BlogContainer from 'routes/blog/BlogContainer'
 import { getBlogs } from 'util/api'
 import { fontLoad, getPath } from 'util/commHook'
+import { KR } from 'util/data' 
 
 export function Index({ data, notFound }) {
 

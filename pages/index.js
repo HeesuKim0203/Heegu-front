@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 import HomeContainer from 'routes/home/HomeContainer'
 import { getProjects, getCareers, getBlogs } from 'util/api'
 import { fontLoad, getPath } from 'util/commHook'
-import { KR } from 'util/data';
+import { KR } from 'util/data' 
 
 // data : Home data
 function Index({}) {
