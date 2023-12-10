@@ -14,7 +14,7 @@ import { siteTitle } from 'util/text'
 function Index({}) {
 
   const { _, lang } = getPath() ;
-  const { load } = fontLoad(lang === KR ? 'Noto Sans KR' : 'Noto Sans JP') ;
+  //const { load } = fontLoad(lang === KR ? 'Noto Sans KR' : 'Noto Sans JP') ;
   const [ data, setData ] = useState({
     careers : [],
     projects : [],
