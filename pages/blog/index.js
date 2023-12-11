@@ -12,7 +12,6 @@ import { siteBlogTitle } from 'util/text'
 export function Index({ data, notFound }) {
 
   const { _, lang } = getPath() ;
-  const { load } = fontLoad(lang === KR ? 'Noto Sans KR' : 'Noto Sans JP') ;
 
   return (
     <>
@@ -24,7 +23,7 @@ export function Index({ data, notFound }) {
         />
       </Head>
       { 
-        load ?
+        data ?
           (!notFound && 
             <BlogContainer 
               data = { data }
