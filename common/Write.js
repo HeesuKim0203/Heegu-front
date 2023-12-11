@@ -44,7 +44,12 @@ function Write(props) {
     const [ jpDescription, setJPDescription ] = useState('') ;
     const [ blogData, setBlogData ] = useState({}) ;
 
-    if(!cookies.token) router.push(`/profile/login`) ; 
+    
+    useEffect(() => {
+        
+      if(!cookies.token) router.push(`/profile/login`) ; 
+
+    }, []) ;
 
     useEffect(() => {
 
