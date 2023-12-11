@@ -25,20 +25,13 @@ function BlogSideMenu({
     language
 }) {
     const router = useRouter() ;
-    const [ menuStatus, setMenuStatus ] = useState(null) 
+    const [ menuStatus, setMenuStatus ] = useState(() => blogBigMenu.reduce((array, value, index) => {
 
-    // Initialization menuStatus
-    useEffect(() => {
-        
-        blogBigMenu && setMenuStatus(blogBigMenu.reduce((array, value, index) => {
+        array[index] = value.status ; 
 
-            array[index] = value.status ; 
+        return array ;
 
-            return array ;
-
-        }, [])) ;
-
-    }, [ language ]) ;
+    }, [])) ;
 
     function BlogSideBigMenuTitleContainerOnClick(event, index) {
 
@@ -53,7 +46,7 @@ function BlogSideMenu({
         <BlogSideMenuWrap>
             <TitleComponent title = { blogSideMenuTitle } />
             <BlogSideMenuContainer>
-                { menuStatus && blogBigMenu && 
+                { menuStatus && 
                     blogBigMenu.map((value, index) => {
                         const smallMenuStatus = value.smallMenu.length !== 0 ;
                         return (

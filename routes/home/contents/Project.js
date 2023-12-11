@@ -32,56 +32,46 @@ function ProjectContents({
     projectTitle
 }) {
 
-    const [ mainItem, setMainItem ] = useState( projects[0] ) ;
     const [ select, setSelect ] = useState(0) ;
 
     function subItemOnClick(event, index) {
 
-        setMainItem(projects[index]) ;
         setSelect(index) ;
 
     }
-
-    useEffect(() => {
-        
-        setMainItem(projects && projects[select]) ;
-
-    }, [ projects ]) 
 
     return (
         <Wrap>
             <Container>
                 <TitleComponent title = { projectTitle } />
-                { projects && 
+                { projects[select] && 
                     <ItemsArea>
-                        { mainItem && 
-                            <MainItem>
-                                <LazyImage
-                                        width = "582"
-                                        height = "320"
-                                        alt = "Project Main Image"
-                                        src = { mainItem.image }
-                                        Component = { MainItemImage }
-                                    />
-                                <MainItemTextArea>
-                                    <MainItemTitle
-                                        onClick = { event => setModalStatus( event, mainItem ) }
-                                    > 
-                                        { mainItem.title } 
-                                        <GoModalIcon /> 
-                                    </MainItemTitle>
-                                    <MainItemResponsibility> { mainItem.responsibility } </MainItemResponsibility>
-                                    <MainItemDescription> { mainItem.description } </MainItemDescription>
-                                    <MainItemSkillArea>
-                                        { mainItem.skill.map((value, index) => 
-                                            (
-                                                <MainItemSkill key = { index } > { value } </MainItemSkill>
-                                            )
-                                        ) }
-                                    </MainItemSkillArea>
-                                </MainItemTextArea>
-                            </MainItem>
-                        }
+                        <MainItem>
+                            <LazyImage
+                                    width = "582"
+                                    height = "320"
+                                    alt = "Project Main Image"
+                                    src = { projects[select].image }
+                                    Component = { MainItemImage }
+                                />
+                            <MainItemTextArea>
+                                <MainItemTitle
+                                    onClick = { event => setModalStatus( event, projects[select] ) }
+                                > 
+                                    { projects[select].title } 
+                                    <GoModalIcon /> 
+                                </MainItemTitle>
+                                <MainItemResponsibility> { projects[select].responsibility } </MainItemResponsibility>
+                                <MainItemDescription> { projects[select].description } </MainItemDescription>
+                                <MainItemSkillArea>
+                                    { projects[select].skill.map((value, index) => 
+                                        (
+                                            <MainItemSkill key = { index } > { value } </MainItemSkill>
+                                        )
+                                    ) }
+                                </MainItemSkillArea>
+                            </MainItemTextArea>
+                        </MainItem>
                         <SubItemContainer>
                             { projects.map((value, index) => (
                                 <SubItem 
