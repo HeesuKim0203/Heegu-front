@@ -34,6 +34,16 @@ function Header({ language }) {
         setLanguageMenuDisplay( languageMenuDisplay ? 0 : 1 ) ;
     }
 
+    function move(name) {
+        const element = menu.find( value => value.name === name ) ;
+
+        element && window.scroll({
+            behavior : 'smooth',
+            left : 0,
+            top : element.y
+        }) ;
+    }
+
     return (
         <Wrap>
             <Container>
@@ -54,6 +64,7 @@ function Header({ language }) {
                             return (
                                 <MenuItem
                                     key = { index }
+                                    onClick = { () => move(name) }
                                 >
                                     <Link 
                                         href = { 

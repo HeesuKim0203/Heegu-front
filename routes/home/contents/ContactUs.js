@@ -70,7 +70,6 @@ function ContactUsContents({
                                 language = { language }    
                             />
                             <Button type = "submit" >
-                                {/* <Ballon>{ ballon }</Ballon> */}
                                 Submit
                             </Button>
                         </Fieldset>

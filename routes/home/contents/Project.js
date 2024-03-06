@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 
 import TitleComponent from 'components/TitleComponent'
 import { 
@@ -31,47 +31,46 @@ function ProjectContents({
     projects,
     projectTitle
 }) {
-
+    
     const [ select, setSelect ] = useState(0) ;
 
     function subItemOnClick(event, index) {
-
         setSelect(index) ;
-
     }
 
     return (
         <Wrap>
             <Container>
                 <TitleComponent title = { projectTitle } />
-                { projects[select] && 
+                { projects && 
                     <ItemsArea>
-                        <MainItem>
-                            <LazyImage
+                        { projects[select] && 
+                            <MainItem>
+                                <MainItemImage
                                     width = "582"
                                     height = "320"
                                     alt = "Project Main Image"
                                     src = { projects[select].image }
-                                    Component = { MainItemImage }
                                 />
-                            <MainItemTextArea>
-                                <MainItemTitle
-                                    onClick = { event => setModalStatus( event, projects[select] ) }
-                                > 
-                                    { projects[select].title } 
-                                    <GoModalIcon /> 
-                                </MainItemTitle>
-                                <MainItemResponsibility> { projects[select].responsibility } </MainItemResponsibility>
-                                <MainItemDescription> { projects[select].description } </MainItemDescription>
-                                <MainItemSkillArea>
-                                    { projects[select].skill.map((value, index) => 
-                                        (
-                                            <MainItemSkill key = { index } > { value } </MainItemSkill>
-                                        )
-                                    ) }
-                                </MainItemSkillArea>
-                            </MainItemTextArea>
-                        </MainItem>
+                                <MainItemTextArea>
+                                    <MainItemTitle
+                                        onClick = { event => setModalStatus( event, projects[select] ) }
+                                    > 
+                                        { projects[select].title } 
+                                        <GoModalIcon /> 
+                                    </MainItemTitle>
+                                    <MainItemResponsibility> { projects[select].responsibility } </MainItemResponsibility>
+                                    <MainItemDescription> { projects[select].description } </MainItemDescription>
+                                    <MainItemSkillArea>
+                                        { projects[select].skill.map((value, index) => 
+                                            (
+                                                <MainItemSkill key = { index } > { value } </MainItemSkill>
+                                            )
+                                        ) }
+                                    </MainItemSkillArea>
+                                </MainItemTextArea>
+                            </MainItem>
+                        }
                         <SubItemContainer>
                             { projects.map((value, index) => (
                                 <SubItem 

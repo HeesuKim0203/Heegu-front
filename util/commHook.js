@@ -11,12 +11,6 @@ export function getPath() {
 
     const element =  menu.find( value => value.name === asPath.substring(2) ) ;
 
-    element && window.scroll({
-        behavior : 'smooth',
-        left : 0,
-        top : element.y
-    }) ;
-
     return { urlPath : asPath, lang : locale, query } ;
 
 }
