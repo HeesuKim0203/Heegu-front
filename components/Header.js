@@ -34,13 +34,23 @@ function Header({ language }) {
         setLanguageMenuDisplay( languageMenuDisplay ? 0 : 1 ) ;
     }
 
+    function move(name) {
+        const element = menu.find( value => value.name === name ) ;
+
+        element && window.scroll({
+            behavior : 'smooth',
+            left : 0,
+            top : element.y
+        }) ;
+    }
+
     return (
         <Wrap>
             <Container>
                 <TitleContainer>
                     <Title>
                         <Link
-                            href={ HOME }
+                            href = { HOME }
                             locale = { language }
                         >
                             { menuTitle }
@@ -62,6 +72,7 @@ function Header({ language }) {
                                             `/${ name.substring(0, 1).toLowerCase() + name.substring(1) }`
                                         }
                                         locale = { language }
+                                        onClick = { () => move(name) }
                                     >
                                         { name }
                                     </Link>

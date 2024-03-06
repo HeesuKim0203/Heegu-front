@@ -78,9 +78,14 @@ const SubItem = styled.div`
     }
 `;
 
-const MainItemImage = styled.img`
+const MainItemImage = styled.div`
     width : 582px ;
     height : 320px ;
+    
+    background-image : ${props => `url(https://www.heegublog.com/api/image${props.src})`} ;
+    background-size : cover ;
+    border-radius : 10px
+
 `; 
 
 const MainItemTextArea = styled.div`

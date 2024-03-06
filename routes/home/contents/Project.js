@@ -56,13 +56,12 @@ function ProjectContents({
                     <ItemsArea>
                         { mainItem && 
                             <MainItem>
-                                <LazyImage
-                                        width = "582"
-                                        height = "320"
-                                        alt = "Project Main Image"
-                                        src = { mainItem.image }
-                                        Component = { MainItemImage }
-                                    />
+                                <MainItemImage
+                                    width = "582"
+                                    height = "320"
+                                    alt = "Project Main Image"
+                                    src = { mainItem.image }
+                                />
                                 <MainItemTextArea>
                                     <MainItemTitle
                                         onClick = { event => setModalStatus( event, mainItem ) }

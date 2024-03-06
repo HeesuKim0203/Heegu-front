@@ -9,13 +9,7 @@ export function getPath() {
 
     const { locale, asPath, query } = router ;
 
-    const element =  menu.find( value => value.name === asPath.substring(2) ) ;
-
-    element && window.scroll({
-        behavior : 'smooth',
-        left : 0,
-        top : element.y
-    }) ;
+    const element = menu.find( value => value.name === asPath.substring(2) ) ;
 
     return { urlPath : asPath, lang : locale, query } ;
 
@@ -73,22 +67,6 @@ export function fontLoad(...fontString) {
 
     const [ load, setLoad ] = useState(true) ;
 
-    // useEffect(() => {
-
-    //     // const enFont = new FontFaceObserver('Poppins') ;
-    //     // const font = fontString.map((value) => {
-    //     //     return new FontFaceObserver(value)
-    //     // }) ;
-
-    //     // Promise.all([...font.map(value => value.load()), enFont.load()]).then(function () {
-    //     //     setLoad(true)
-    //     // }, function(err) { console.log(err) }) ;
-
-        
-
-    // }, []) ;
-
-
     return { load } ;
 } 
 
@@ -111,7 +89,7 @@ export function LazyImageObserver( srcData, width, height ) {
 
                     if(entry.isIntersecting) {
                         timeOutClear = setTimeout(() => {
-                            setImageSrc(process.env.NEXT_PUBLIC_IMAGE_URL + srcData+ `?tr=w-${width},h-${height}`) ;
+                            setImageSrc(process.env.NEXT_PUBLIC_IMAGE_URL + srcData + `?tr=w-${width},h-${height}`) ;
                         }, 150) ;
                         observer.unobserve( imageRef.current ) ;
                     } 
