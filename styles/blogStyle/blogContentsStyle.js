@@ -52,9 +52,10 @@ const BlogContentsItemsTitle = styled.h3`
 const BlogContentsItemsImage = styled.img`
     width : 378px ;
     height : 240px ;
+    border-radius : 10px ;
 
     @media ${props => props.theme.mobileL} {
-        width : 100% ;
+        width : 90% ;
         height : 240px ;
         box-sizing: border-box;
         margin : 0 auto ;

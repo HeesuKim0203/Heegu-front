@@ -25,30 +25,30 @@ function BlogContents({
                 blogs
                     .sort((a, b) => new Date(b.writingDate) - new Date(a.writingDate))
                     .map((value, index) => {
-                    return (
-                        <BlogContentsItemLink
-                            key = { index }
-                            href = { `/blog/${value._id}` }
-                            locale = { language }
-                        >
-                            <BlogContentsItems
+                        return (
+                            <BlogContentsItemLink
                                 key = { index }
+                                href = { `/blog/${value._id}` }
+                                locale = { language }
                             >
-                                <BlogContentsItemsTextArea>
-                                    <BlogContentsItemsTitle> { value.title } </BlogContentsItemsTitle>
-                                    <BlogContentsItemsDescription> { value.introduction } </BlogContentsItemsDescription>
-                                    <BlogContentsItemsDate> { value.writingDate.substr(0, 10).replaceAll('-', '.') } </BlogContentsItemsDate>
-                                </BlogContentsItemsTextArea>
-                                <LazyImage 
-                                    width = "378"
-                                    height = "240"
-                                    alt = "Blog Image"
-                                    src = { value.image }
-                                    Component = { BlogContentsItemsImage }
-                                />
-                            </BlogContentsItems>
-                        </BlogContentsItemLink>
-                    ) ;
+                                <BlogContentsItems
+                                    key = { index }
+                                >
+                                    <BlogContentsItemsTextArea>
+                                        <BlogContentsItemsTitle> { value.title } </BlogContentsItemsTitle>
+                                        <BlogContentsItemsDescription> { value.introduction } </BlogContentsItemsDescription>
+                                        <BlogContentsItemsDate> { value.writingDate.substr(0, 10).replaceAll('-', '.') } </BlogContentsItemsDate>
+                                    </BlogContentsItemsTextArea>
+                                    <LazyImage 
+                                        width = "378"
+                                        height = "240"
+                                        alt = "Blog Image"
+                                        src = { value.image }
+                                        Component = { BlogContentsItemsImage }
+                                    />
+                                </BlogContentsItems>
+                            </BlogContentsItemLink>
+                        ) ;
                 })) : (
                     blogs
                         .filter(value => value.type === query.type)
